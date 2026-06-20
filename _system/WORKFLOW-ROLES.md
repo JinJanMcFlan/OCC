@@ -111,6 +111,32 @@ Rules:
 - A follow-up run keeps the original ID and title, then adds a clear suffix before the project code. Example: `R1 — General Router Task Facts — Follow-up 1 [OCC]`.
 - The title must describe the research question in plain language so a human can find the run later without opening it.
 
+### External research capacity management
+
+External research providers may have separate limits for concurrent runs, rolling time windows, daily usage, weekly usage, model choice, file size, or account tier.
+
+Before launching a research run, the responsible orchestrator must identify the provider's currently available capacity from the provider interface when possible.
+
+For each external research provider, keep a lightweight queue record containing:
+
+- Current observed concurrent-run capacity
+- Current observed reset or refresh time, when shown
+- Active research runs
+- Approved ready-to-run research items
+- Items blocked by dependencies or missing inputs
+- Whether a provider limit is confirmed, estimated, or unknown
+
+Use available capacity efficiently:
+
+- Launch up to the currently available number of approved, independent research runs.
+- Do not launch dependent runs before their required inputs exist.
+- Do not invent research merely to fill unused capacity.
+- Prefer the highest-priority ready items that produce a clear decision, evidence artifact, or required dependency.
+- When a run finishes or a usage window refreshes, launch the next approved ready item.
+- Preserve the provider's stable research-run title so the result can be found later.
+
+Provider limits are operational constraints, not architecture decisions. Do not hardcode a provider's observed quota as a permanent project rule.
+
 ---
 
 ## How a task flows
