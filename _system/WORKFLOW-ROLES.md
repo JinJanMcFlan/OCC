@@ -91,6 +91,28 @@ The destination block must remain outside the copyable prompt. It is context for
 
 ---
 
+## External research-run naming and retrieval
+
+When a human manually launches research in an external research system that has its own project, folder, or chat history, the research run must receive a stable, searchable title before it is launched.
+
+Use this format:
+
+`R{queue ID} — {short plain-English research title} [{Project Code}]`
+
+Example:
+
+`R1 — General Router Task Facts [OCC]`
+
+Rules:
+
+- The queue ID must match the approved research queue and must not change later.
+- Use the same queue ID and core title in the external research chat, the returned-result handoff, and the related disk research record. Adjust only file-safe characters when needed for filenames.
+- Keep temporary status, provider name, model name, and date out of the title. Those belong in the queue record or result metadata, not the stable research title.
+- A follow-up run keeps the original ID and title, then adds a clear suffix before the project code. Example: `R1 — General Router Task Facts — Follow-up 1 [OCC]`.
+- The title must describe the research question in plain language so a human can find the run later without opening it.
+
+---
+
 ## How a task flows
 
 1. Orient. A fresh chat reads the project files to confirm where the project is. State lives in files; the chat is today's working memory.
