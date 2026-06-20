@@ -65,3 +65,7 @@ Cognitive consolidation — that useful general intelligence may emerge from con
 ### Research direction is evidence-governed
 
 Research direction may deepen, redirect, park, or integrate based on findings. No arbitrary ceiling on hypotheses; no architecture dependency without evidence.
+
+### Initial app-shell runtime: Electron Forge, Vite, React, TypeScript
+
+OCC's first standalone desktop shell uses Electron Forge, Vite, React, and TypeScript. This selects the initial desktop application runtime only; it does not lock provider, model, router, storage, connector, or shared-record architecture.
