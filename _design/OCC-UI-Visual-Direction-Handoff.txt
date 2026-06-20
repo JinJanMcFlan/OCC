@@ -1,0 +1,374 @@
+# OCC UI Visual Direction Handoff
+
+Status: design extraction / working direction
+Project: OCC — Overseer Command Center
+Purpose: Capture the current visual direction for OCC’s base user experience, Presentation Mode, and related graph/map views before implementation design continues.
+
+---
+
+## 1. Core Design Philosophy
+
+OCC should be powerful, but visually calm.
+
+The base app should be minimalistic by default. Visual clutter kills. The user should not be forced to look at every agent, every task, every dependency, and every metric at all times. OCC should start quiet, clean, and usable, then expand only when the user wants more complexity.
+
+The guiding split is:
+
+Base UX = minimal, practical, daily working interface.
+
+Presentation Mode = cinematic, living, expandable command-center view.
+
+OCC must feel IDE-scale and powerful, but not messy. It should let advanced users open as much complexity as they want without making the default app overwhelming.
+
+---
+
+## 2. Base OCC User Experience
+
+The normal OCC layout should be simple and stable.
+
+The base screen should contain:
+
+1. Left panel: Projects + chat log.
+2. Center panel: Main OCC / Overseer command thread.
+3. Right panel: Controls, cost, autonomy, folder binding, context, model/provider status.
+4. Bottom area: Queue / running tasks / waiting tasks / deferred tasks.
+
+This is the daily work mode.
+
+The base app should not look like a chaotic dashboard. It should feel like a calm command surface where the user can direct OCC, review work, and open deeper views only when needed.
+
+Every major tab or panel should be able to go full screen at any time. This includes chat, files, cost view, queue, agent runs, project view, Presentation Mode, and future visual map views.
+
+The user should be able to open floating internal windows over the current view, similar to moving browser windows around on a desktop, but contained inside OCC. Example: the user could be in Presentation Mode full screen and still open the local files window, drag it anywhere, resize it, and keep working.
+
+---
+
+## 3. Presentation Mode / Showcase Mode
+
+Presentation Mode is one of OCC’s strongest visual differentiators.
+
+It should not just show floating chat windows. It should show the actual structure of the work: the main goal, delegated tasks, sub-tasks, dependencies, blocked questions, approvals, outputs, and agent activity.
+
+Think: Logseq graph view, but alive, task-aware, agent-aware, cost-aware, and interactive.
+
+Presentation Mode should support full-screen use and should be good enough that Jonathan can personally work inside it full time if he wants.
+
+---
+
+## 4. Presentation Mode Core Layout
+
+OCC / Overseer should stay near the center as the command source.
+
+Tasks, agents, sub-tasks, review items, and outputs appear around OCC as bubbles, cards, windows, or nodes.
+
+Work expands outward from the center:
+
+Main OCC command → major task → delegated agent → sub-task → result / dependency / blocker.
+
+Each visible item should have a color based on task type, agent type, or state.
+
+The view should support zooming out, zooming in, panning, and free navigation around the workspace. The user should be able to move around it like a graph canvas.
+
+There should be a “focus back to Overseer” button that instantly recenters the view on the main OCC / Overseer node.
+
+---
+
+## 5. Presentation Mode Movement and Depth
+
+Presentation Mode should feel slightly 3D.
+
+This does not necessarily mean full 3D modeling. It means the interface should use scale, depth, blur, spacing, and motion to make the user feel like they are navigating an augmented reality map of their work.
+
+When a user clicks a bubble:
+
+1. The selected bubble comes forward and becomes larger.
+2. Direct dependencies and connected tasks become medium-sized.
+3. Less relevant tasks shrink and move farther back.
+4. The wider graph stays visible, but becomes less dominant.
+
+This depth should be fluid, not limited to exactly three sizes. On a large monitor, especially a 57-inch display, the user should be able to see much more of the depth and surrounding graph.
+
+The experience should feel like navigating a living command space, not just clicking a static diagram.
+
+---
+
+## 6. Lines, Dependencies, and Context
+
+Connections between bubbles matter.
+
+Lines should show relationships such as:
+
+1. This task created that task.
+2. This code task depends on that research.
+3. This review is blocking that implementation.
+4. This human question came from that agent.
+5. This completed result feeds into that final output.
+
+Lines should be visually useful and visually appealing.
+
+Each box has its own color, so the connecting line should be a glowing gradient between the colors of the two connected boxes.
+
+Line interactions:
+
+1. Hovering over a line illuminates the half or segment being hovered.
+2. Clicking a line focuses the connected box or relationship.
+3. Clicking a line can show context: where this came from, what depends on it, and what the relationship means.
+4. Ctrl-clicking multiple lines or boxes locks them into a temporary focused view.
+5. Locked selected items should hover in the middle in a viewable, pinned way.
+
+The lines should not be decoration only. They are part of navigation and context recovery.
+
+---
+
+## 7. Human Review / Approval Zone
+
+Presentation Mode needs a dedicated human-review area.
+
+When OCC needs human input, approval, confirmation, or review, the related bubble should move into the top-right human zone.
+
+That human zone should contain:
+
+1. The active item needing the user.
+2. A clear question or approval request.
+3. A text box or action area for the user response.
+4. A queue of other human-needed items underneath.
+
+When the user answers, approves, rejects, or edits the item, the bubble should fly back to the part of the graph it came from.
+
+If more human items are waiting, the next one moves forward.
+
+The line from the original task to the human-review bubble should remain visible. If other work depends on that answer, those dependency lines should also stay visible.
+
+This lets the user understand why the system is waiting and what will continue after they answer.
+
+---
+
+## 8. Automated Show Mode and No-Limits Display Mode
+
+Presentation Mode should support different display behaviors.
+
+Automated Show Mode:
+OCC keeps working while the user watches. It surfaces only what matters: live progress, interesting changes, failures, completions, and human-needed items. It is good for sleep mode, demos, investor viewing, or team monitoring.
+
+No-Limits Display Mode:
+OCC can show much more of the graph and activity at once. This is for large monitors, power users, and showcase scenarios where the goal is to see the full system working.
+
+Both modes need a pause button and easy view switching.
+
+---
+
+## 9. Freeform Mode vs Lock Mode
+
+Presentation Mode needs at least two layout behaviors.
+
+Freeform Mode:
+The graph behaves like a living blob. Nodes can drift, breathe, reorganize, and move based on task weight, relevance, activity, and dependency structure. This is visually alive and impressive, but can become harder to track during heavy activity.
+
+Lock Mode:
+Nodes spawn into more stable positions and mostly stay there. This prevents the user from chasing moving boxes while a lot is happening. Lock Mode is better for actual work and monitoring.
+
+The user should be able to switch between these behaviors.
+
+---
+
+## 10. Fractal Lock Mode Idea
+
+There is a possible future direction where Lock Mode behaves more like a fractal.
+
+Instead of always expanding outward and fighting for screen space, the graph could focus inward by depth. Selecting a node could reveal layers inside layers, with related tasks arranged in a nested mathematical pattern.
+
+This needs more design exploration later.
+
+The fractal concept could become strong marketing material because it visually communicates that OCC organizes complexity through structured logic. Technical audiences may respond strongly to this idea.
+
+Status: promising idea, not fully designed yet.
+
+---
+
+## 11. New Bubble Spawn Behavior
+
+The rainbow border/glow stays.
+
+When a new task bubble appears, it should spawn with a rainbow glow or rainbow border animation to catch the user’s eye.
+
+Then the glow should settle into the correct task color.
+
+After it settles, the bubble should not keep glowing constantly unless:
+
+1. It is hovered.
+2. It is selected.
+3. It needs attention.
+4. It has failed.
+5. It is rate limited.
+6. It is actively being focused by the user.
+
+This keeps the visual effect special instead of noisy.
+
+---
+
+## 12. Task Colors and Status Dots
+
+Every bubble/window/card should show two kinds of meaning:
+
+Task type through color:
+Examples: code, research, chat, review, monitor, files, cost, planning, documentation.
+
+Task state through status:
+Examples: working, complete, failed, blocked, waiting for human, rate limited, deferred, paused.
+
+There should be a legend in Presentation Mode so the user can understand what the colors, lines, dots, and states mean.
+
+The legend can live on the right or left side and should be collapsible.
+
+---
+
+## 13. Floating Windows Inside Presentation Mode
+
+Presentation Mode should not prevent normal work.
+
+The user should be able to open any tab or working panel over the Presentation Mode canvas.
+
+Examples:
+
+1. Local files window.
+2. Main OCC chat.
+3. Agent chat.
+4. Cost dashboard.
+5. Queue.
+6. Human approvals.
+7. Project settings.
+8. Logs.
+9. Output preview.
+10. Browser/research panel if supported later.
+
+These windows should be draggable, resizable, closable, and pinnable.
+
+This makes it possible to work full time in Presentation Mode instead of treating it only as a demo screen.
+
+---
+
+## 14. Mind Map / Flowchart View
+
+There should also be a cleaner 2D view separate from Presentation Mode.
+
+This is a safer working view: less chaotic, flatter, more structured, easier to read. It is closer to a mind map or flowchart.
+
+This view can show the same underlying information as Presentation Mode, but in a simpler plane.
+
+Possible behavior:
+
+1. The selected item appears in the center.
+2. Parent items appear above or to the left.
+3. Dependencies and child tasks appear around it.
+4. The user can go up the chain.
+5. The user can view the full tree if desired.
+6. Clicking a node opens its working window.
+7. A side index or legend highlights the current chat, parent chain, dependencies, and children.
+
+This view is not locked yet. It needs more design development.
+
+Working name options:
+
+* Mind Map View
+* Flow View
+* Task Tree View
+* Dependency Map
+* Work Map
+
+Current leaning: this is the clean working-safe version of Presentation Mode.
+
+---
+
+## 15. Tree / Index / Legend Panel
+
+Graph-based views need a side index.
+
+The index should help the user answer:
+
+1. Where am I?
+2. What chat/task am I looking at?
+3. What created this?
+4. What depends on this?
+5. What is blocked?
+6. What needs me?
+7. What is complete?
+8. What can I open?
+
+The index can live on the right or left side.
+
+It should highlight the current node and show parent/child/dependency relationships.
+
+The user should be able to switch between:
+
+1. Focused local tree.
+2. Full tree.
+3. Human-needed only.
+4. Failed/blocked only.
+5. Active agents only.
+6. Completed outputs.
+
+---
+
+## 16. AR / VR Future Direction
+
+Future AR / VR / smart-glasses support should be logged as a long-term design direction, not a first-build requirement.
+
+Presentation Mode should be designed in a way that could eventually translate into AR:
+
+1. Spatial graph.
+2. Depth-based focus.
+3. Floating task objects.
+4. Lines between dependencies.
+5. Pinned objects.
+6. Voice or gesture-friendly navigation.
+7. Human approval cards in space.
+
+This is pre-release / future-function territory.
+
+Do not let AR/VR complicate the first usable app, but preserve the design direction so the interface does not paint itself into a corner.
+
+---
+
+## 17. Base UX vs Presentation Mode Split
+
+The product should have two very different visual personalities that share the same underlying data.
+
+Base UX:
+Minimal. Clean. Daily driver. Low clutter. Focused on getting work done.
+
+Presentation Mode:
+Cinematic. Spatial. Alive. Shows the machine working. Best for demos, overnight monitoring, investor/client/team visibility, and power-user command-center work.
+
+Mind Map / Flow View:
+Structured. Safer. 2D. Practical. Better for navigating task logic without the full visual intensity of Presentation Mode.
+
+---
+
+## 18. Immediate Design Direction
+
+Next, lock the base UX before developing the advanced modes too deeply.
+
+The base app should define:
+
+1. Project panel.
+2. Chat/sub-chat log.
+3. Main OCC chat.
+4. Queue/running tasks.
+5. Cost/budget controls.
+6. Autonomy controls.
+7. File/folder binding.
+8. Agent/task detail view.
+9. Full-screen behavior.
+10. Floating internal window behavior.
+
+After base UX is clear, Presentation Mode and Mind Map View can be designed on top of the same underlying task/chat/dependency data.
+
+---
+
+## 19. Important Product Principle
+
+OCC should not force users into complexity.
+
+It should let users start simple, then open more power as needed.
+
+The power is always there. The clutter is optional.
