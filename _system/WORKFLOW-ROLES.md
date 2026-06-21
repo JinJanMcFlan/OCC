@@ -77,6 +77,18 @@ Use a TaskRunner only when the task genuinely requires multiple execution rounds
 
 ---
 
+## Coding-agent execution and escalation
+
+Orchestrators resolve ambiguity, missing requirements, architecture choices, research questions, and scope tradeoffs before an implementation prompt reaches a coding agent. A coding agent must not be handed open-ended problems or broad orchestration context.
+
+Coding agents receive exact bounded specifications and execute within that scope. They do not conduct open-ended research, alter architecture, or silently expand scope without orchestrator authorization.
+
+Coding agents may escalate upward when they find a contradiction, unmet assumption, material risk, or evidence-backed improvement opportunity within their assigned work. Escalation must include: the evidence, expected impact, affected files or boundary, and a recommended next decision. Research guardrails and existing decisions are not hard ceilings — credible adjacent improvements may be surfaced for orchestrator review, but must not be acted on without authorization.
+
+One bounded implementation slice may use the direct execution lane. When two or more substantial code workstreams are truly independent and safely parallelizable, MainOrch creates separate implementation SubOrchs before assigning parallel execution agents. Do not create parallel lanes when they would edit overlapping files or depend on unresolved shared contracts.
+
+---
+
 ## Mandatory prompt-delivery protocol
 
 Before every copyable prompt, the orchestrator must provide a separate plain-text destination block.

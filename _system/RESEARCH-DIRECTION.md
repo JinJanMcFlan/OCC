@@ -49,6 +49,12 @@ OCC is both a useful commercial product now and a proof environment for this lon
 - Budget awareness: research runs must justify their cost.
 - Auditability: findings feed decision-ready handoffs, not informal impressions.
 
+### Solve and improve posture
+
+OCC research does not only look for existing solutions. It studies adjacent systems, companies, and research for transferable mechanisms; identifies limitations and weaknesses in those approaches; proposes evidence-backed OCC improvement hypotheses; and requires validation before treating any improvement as product direction or architecture.
+
+This posture does not authorize unsupported claims, automatic architecture commitments, or unrestricted implementation. An improvement hypothesis becomes product direction only after MainOrch review and ratification.
+
 ---
 
 ## RecursiveMAS

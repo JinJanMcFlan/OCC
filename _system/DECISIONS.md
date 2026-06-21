@@ -69,3 +69,14 @@ Research direction may deepen, redirect, park, or integrate based on findings. N
 ### Initial app-shell runtime: Electron Forge, Vite, React, TypeScript
 
 OCC's first standalone desktop shell uses Electron Forge, Vite, React, and TypeScript. This selects the initial desktop application runtime only; it does not lock provider, model, router, storage, connector, or shared-record architecture.
+
+### State-changing retry boundary
+
+OCC must not blindly retry state-changing work or claim automatic rollback unless idempotency, rollback behavior, or an explicit approved recovery plan is known before execution. Read-only and reversible work may use later-approved cautious fallback behavior.
+
+---
+
+## Pending MainOrch decisions — not architecture yet
+
+- **Split-gate interpretation:** binding execution constraints may block a route, while uncertain or potentially better alternatives must remain visible as exploration candidates rather than silently disappearing. Not ratified.
+- **Semantic-feedback governance:** direct operational facts may update automatically; semantic capability judgments remain task-specific, traceable, gradual, and review-supported. Not ratified.

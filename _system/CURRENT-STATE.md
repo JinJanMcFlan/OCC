@@ -22,7 +22,9 @@ A consolidated shared-source summary lives at `_system\APP-VISUAL-DIRECTION.md`.
 
 **Documentation consolidation and Git baseline** are complete. All active `_system` documents have been rewritten. Historical foundation records are archived at `_archive\foundation-records\`. Restricted orchestration-only historical material is stored outside the OCC repository.
 
-**Base UX desktop shell** is built and validated. An isolated, locally runnable desktop shell exists at `apps\occ-desktop\` using Electron Forge, Vite, React, and TypeScript. It implements the four-panel Base UX layout (left: projects and conversation tree; center: command thread and composer; right: local controls and status placeholders; bottom: queue with five visual states). This shell is intentionally isolated from router, data, and provider architecture — all of which remain unimplemented and locked pending research. Boundary document: `_architecture\BASE-UX-SHELL-BOUNDARY.md`.
+**Bounded router research queue R1–R5** is complete, audited, preserved, committed, and pushed. All five research runs are preserved under `_research\findings\`. The final synthesis audit is at `_research\findings\ROUTER-RESEARCH-SYNTHESIS-AUDIT.md`. The router completion handoff is at `_handoffs\ROUTER-RESEARCH-COMPLETION-HANDOFF.md`. Router-research completion checkpoint: commit `099b9ae`.
+
+**Base UX desktop shell** is built and validated. An isolated, locally runnable desktop shell exists at `apps\occ-desktop\` using Electron Forge, Vite, React, and TypeScript. It implements the four-panel Base UX layout (left: projects and conversation tree; center: command thread and composer; right: local controls and status placeholders; bottom: queue with five visual states). This shell is intentionally isolated from router, data, and provider architecture — all of which remain unimplemented and locked pending research. Accepted initial app-shell checkpoint: commit `28384c2`. Boundary document: `_architecture\BASE-UX-SHELL-BOUNDARY.md`.
 
 ---
 
@@ -34,20 +36,32 @@ A consolidated shared-source summary lives at `_system\APP-VISUAL-DIRECTION.md`.
 
 ---
 
+## What can continue now
+
+Core router implementation remains blocked pending a MainOrch-approved Router Build Package. Work that may proceed:
+
+- Static and mock Base UX work within the approved app-shell boundary
+- Routing test-case preparation
+- Folder-binding and connector planning
+- Benchmark preparation
+- Reversible scaffolding that does not lock core router architecture
+
+---
+
 ## Current work order
 
-1. Documentation and Git baseline — complete.
-2. Research portfolio reconciliation.
-3. Revised bounded research queue.
-4. Research runs.
-5. Build plan using benchmarks, not timelines.
-6. Base UX refinement in parallel — initial shell complete.
+1. Documentation sync and project-source mirror refresh.
+2. Operational research-queue planning.
+3. Router Build Package and benchmark preparation.
+4. Parallel no-regret app-shell and Base UX implementation.
+5. Core router implementation only after an approved build package.
 
 ---
 
 ## What is not yet built
 
-- Router-core architecture is unimplemented and locked pending router research completion.
+- Router-core architecture is unimplemented and locked pending a MainOrch-approved Router Build Package.
+- Final router logic, shared record model, scoring formula, storage changes, automatic rerouting, and automatic semantic confidence updates are not approved.
 - No OCC v1 scope has been defined.
 - Model and provider registry is stale; refresh at build time.
 - No real provider, model, cost, or API integration.
