@@ -37,6 +37,18 @@ Detailed handoff: `_handoffs\WAVE-1-RESEARCH-STATUS-HANDOFF.md`
 
 **Base UX desktop shell** is built and validated. An isolated, locally runnable desktop shell exists at `apps\occ-desktop\` using Electron Forge, Vite, React, and TypeScript. It implements the four-panel Base UX layout (left: projects and conversation tree; center: command thread and composer; right: local controls and status placeholders; bottom: queue with five visual states). This shell is intentionally isolated from router, data, and provider architecture — all of which remain unimplemented and locked pending research. Accepted initial app-shell checkpoint: commit `28384c2`. Boundary document: `_architecture\BASE-UX-SHELL-BOUNDARY.md`.
 
+**Base UX Command Thread** is complete and mounted in the live Electron shell. The development shell can be launched at any time through `._Human\OCC Dev Launch.cmd` (resolves to `apps\occ-desktop` and runs `npm run start`; terminal stays open while the app is running). The mounted Command Thread provides a compact project/conversation context bar, a persistent truthful status line (`UI preview — response engine not connected`), a selected local preview thread, local loading/empty/unavailable states, and a composer with standard keyboard behavior (Enter sends; Shift+Enter inserts a newline; IME composition does not accidentally send; empty or whitespace-only input disables Send). Local send appends only the user's text to temporary in-memory UI state and clears the composer. The thread is intentionally presentation-only, static, and local — no routing, provider, task, file, background-work, network, IPC, persistence, or external-action behavior. TypeScript and lint both passed. Visual launch was confirmed before the final shortcut correction. One brief manual acceptance check remains at the next app open: confirm Enter sends and Shift+Enter inserts a newline. Commits: `534e113`, `9fbc25c`, `19a2fb8`, `a20e851`, `62fd02e`.
+
+Known intentionally unbuilt Base UX areas (not defects; not approved build scope):
+
+- Meaningful Project and Conversation Navigator
+- Real project and conversation data
+- Resizable shell-panel layout
+- Functional Controls/Status content
+- Meaningful Queue content
+- Provider and inference connection
+- Router, persistence, filesystem/folder binding, task semantics, approvals, real history, and cross-thread dependency behavior
+
 ---
 
 ## Active direction
@@ -64,10 +76,11 @@ Core router implementation remains blocked pending a MainOrch-approved Router Bu
 ## Current work order
 
 1. Manually re-upload changed `_system` files to the ChatGPT OCC project sources.
-2. Run `Founder Research Briefings [OCC]` — discuss R7, R8, and R9 findings (one topic per session; produce founder-position handoffs).
-3. Open `[In Progress] (operational research) TaskRunner#3 [OCC]` after founder discussions to create `B1 — Router Scenario Corpus`.
-4. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
-5. Do not launch R10–R21 without explicit MainOrch approval.
+2. Complete the short Command Thread keyboard acceptance check (launch via `._Human\OCC Dev Launch.cmd`; confirm Enter sends and Shift+Enter inserts a newline). This is the only remaining condition before SubOrch#5 can be formally marked complete.
+3. Run `Founder Research Briefings [OCC]` — discuss R7, R8, and R9 findings (one topic per session; produce founder-position handoffs).
+4. Open `[In Progress] (operational research) TaskRunner#3 [OCC]` after founder discussions to create `B1 — Router Scenario Corpus`.
+5. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
+6. Do not launch R10–R21 without explicit MainOrch approval.
 
 ---
 

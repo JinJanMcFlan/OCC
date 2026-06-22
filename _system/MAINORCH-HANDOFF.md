@@ -67,6 +67,7 @@ See `_system\PROJECT-SOURCE-MANIFEST.md` for the full list and purpose of each f
 - `Main ResearchOrch [OCC]` — **high-level frontier and research direction only.** Does not operate the working research queue; does not write worker research prompts. Preserve chat history.
 - `[Authorized] Founder Research Briefings [OCC]` — conversational founder-understanding lane. Begins with R7/A3 (privacy and provider-evidence governance). Covers one research topic at a time. Produces concise founder-position handoffs. Does not launch research, write external prompts, edit files, or ratify architecture.
 - `[In Progress] (operational research) TaskRunner#3 [OCC]` — authorized to replace TaskRunner#2 for the next research phase. Receives founder-briefing handoffs and creates `B1 — Router Scenario Corpus` only after founder discussion of R7, R8, and R9.
+- `[In Progress] (Base UX command thread) SubOrch#5 [OCC]` — Command Thread is complete and mounted. Ready for formal closeout pending only the short manual keyboard acceptance check (Enter/Shift+Enter). Implementation lane must not begin unrelated new work before closeout.
 - Fresh `MainOrch [OCC]` — next overall project-control chat (the recipient of this document).
 
 ---
@@ -107,6 +108,10 @@ Detailed Wave 1 handoff: `_handoffs\WAVE-1-RESEARCH-STATUS-HANDOFF.md`
 
 An isolated, locally runnable Base UX desktop shell exists at `apps\occ-desktop\` (Electron Forge, Vite, React, TypeScript). All benchmarks passed. Accepted initial app-shell checkpoint: commit `28384c2`. Boundary document: `_architecture\BASE-UX-SHELL-BOUNDARY.md`.
 
+The Base UX Command Thread is complete and mounted. Launch the development shell at any time through `._Human\OCC Dev Launch.cmd`. The thread provides: compact project/conversation context bar; persistent truthful status line (`UI preview — response engine not connected`); local preview thread; local loading/empty/unavailable states; standard keyboard behavior (Enter sends, Shift+Enter inserts newline, IME-safe, empty-input guard). Local send appends user text to temporary in-memory UI state only — no routing, provider, task, IPC, persistence, or external-action behavior. TypeScript and lint passed; visual launch confirmed. Commits: `534e113`, `9fbc25c`, `19a2fb8`, `a20e851`, `62fd02e`.
+
+One brief manual keyboard acceptance check remains: launch the app, confirm Enter sends and Shift+Enter inserts a newline. SubOrch#5 is ready for formal closeout only after that check. Its implementation lane must not begin unrelated new work.
+
 ---
 
 ## Direct execution lane
@@ -122,8 +127,9 @@ Full workflow: `_system\WORKFLOW-ROLES.md`
 ## Next work order
 
 1. Re-upload changed `_system` files to the ChatGPT OCC project sources.
-2. Run `Founder Research Briefings [OCC]` to discuss R7, R8, and R9 findings (one topic per session; produce founder-position handoffs).
-3. Open `[In Progress] (operational research) TaskRunner#3 [OCC]` after founder discussions to create `B1 — Router Scenario Corpus`.
-4. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
-5. Do not launch R10–R21 without explicit MainOrch approval.
-6. Do not code core router architecture until an approved `D1 — Router Build Package [OCC]` exists.
+2. Complete the short Command Thread keyboard acceptance check (launch via `._Human\OCC Dev Launch.cmd`; confirm Enter sends and Shift+Enter inserts a newline). Formally close SubOrch#5 after this check passes.
+3. Run `Founder Research Briefings [OCC]` to discuss R7, R8, and R9 findings (one topic per session; produce founder-position handoffs). This is the first substantive next-session lane.
+4. Open `[In Progress] (operational research) TaskRunner#3 [OCC]` after founder discussions to create `B1 — Router Scenario Corpus`.
+5. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
+6. Do not launch R10–R21 without explicit MainOrch approval.
+7. Do not code core router architecture until an approved `D1 — Router Build Package [OCC]` exists.

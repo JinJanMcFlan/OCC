@@ -74,6 +74,10 @@ OCC's first standalone desktop shell uses Electron Forge, Vite, React, and TypeS
 
 OCC must not blindly retry state-changing work or claim automatic rollback unless idempotency, rollback behavior, or an explicit approved recovery plan is known before execution. Read-only and reversible work may use later-approved cautious fallback behavior.
 
+### Composer keyboard convention: Enter sends; Shift+Enter inserts a newline
+
+Enter sends the message; Shift+Enter inserts a newline. This is OCC's default familiar AI-chat interaction pattern. Ctrl/Cmd+Enter is not the primary required send shortcut. A user preference toggle for this basic behavior must not be added at this stage.
+
 ---
 
 ## Pending MainOrch decisions — not architecture yet

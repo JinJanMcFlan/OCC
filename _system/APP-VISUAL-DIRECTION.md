@@ -14,6 +14,16 @@ OCC should be powerful but visually calm. The default state is minimal and quiet
 
 ---
 
+## Base UX — Interaction principles
+
+OCC's Base UX follows familiar modern AI-chat and IDE workspace interaction patterns. The goal is immediate orientation, a readable central thread, strong project and conversation context, practical keyboard-first interaction, and a low learning curve — with OCC improving on familiar patterns rather than merely cloning them.
+
+Normal chat is a calm, legible detail surface. Real multi-thread, multi-provider, and dependency relationships belong in future Presentation Mode and Mind Map / Flow views backed by shared work data. Decorative fake graphs or simulated dependency visualizations must not appear in normal Base UX chat.
+
+Native shell-menu treatment remains an open shell-chrome question. Custom OCC command surfaces and minimized legacy Electron/native menus are directionally preferred, especially in Presentation and Mind Map modes. No Base UX component pass may silently remove or redesign native menus; any native-menu change requires an explicit decision.
+
+---
+
 ## Base UX — Daily working interface
 
 Calm, minimal, stable. Four regions:
