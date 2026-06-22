@@ -149,6 +149,14 @@ Use available capacity efficiently:
 
 Provider limits are operational constraints, not architecture decisions. Do not hardcode a provider's observed quota as a permanent project rule.
 
+### Project-specific artifact labels
+
+A project-specific research-operations protocol may define internal `A#`, `B#`, and `D#` artifacts alongside external `R#` research runs.
+
+- R-runs retain the stable external title format defined above and are used for externally launched research.
+- A/B/D artifacts are normally internal records and do not require external research chats.
+- This does not alter the existing role boundaries: research direction stays with ResearchOrch, prompt drafting and returned-result auditing stay with TaskRunners, and execution agents remain execution-only.
+
 ---
 
 ## How a task flows

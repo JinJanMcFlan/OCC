@@ -1,6 +1,6 @@
 # OCC — Current State
 
-**Last updated:** 2026-06-20
+**Last updated:** 2026-06-21
 **Read order:** `OCC-ALIGNMENT.md` (identity) → this file (where we are) → `DECISIONS.md` (active calls).
 
 ---
@@ -32,7 +32,7 @@ A consolidated shared-source summary lives at `_system\APP-VISUAL-DIRECTION.md`.
 
 **Main ResearchOrch direction** is active. OCC's research engine covers both market and capability intelligence and longer-running frontier solution research.
 
-**Targeted research is paused** while the research portfolio is reconciled. `_research\prompts\` contains only a README; no active research prompts are approved yet. New bounded research prompts must be produced by the responsible orchestrator chat.
+**Research Direction v1.1 and the Research Operations protocol are now active.** External research remains paused pending `A2 — R1–R5 Research Posture Audit [OCC]`. `_research\prompts\` contains only a README; no active research prompts are approved yet. New bounded research prompts must be produced by the responsible orchestrator chat.
 
 ---
 
@@ -50,11 +50,11 @@ Core router implementation remains blocked pending a MainOrch-approved Router Bu
 
 ## Current work order
 
-1. Documentation sync and project-source mirror refresh.
-2. Operational research-queue planning.
-3. Router Build Package and benchmark preparation.
-4. Parallel no-regret app-shell and Base UX implementation.
-5. Core router implementation only after an approved build package.
+1. Manually re-upload changed `_system` files to the ChatGPT OCC project sources.
+2. Run `A2 — R1–R5 Research Posture Audit [OCC]`.
+3. Revise and seek approval for the dependency-aware R6–R21 portfolio.
+4. Create the approved human dependency map.
+5. Launch approved independent research waves while reversible Base UX work continues.
 
 ---
 

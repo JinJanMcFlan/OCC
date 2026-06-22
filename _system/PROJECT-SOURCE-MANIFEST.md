@@ -17,6 +17,7 @@ This manifest lists every active `_system` file and its purpose.
 | `APP-VISUAL-DIRECTION.md` | Consolidated visual direction for Base UX, Presentation Mode, and related views. |
 | `PROJECT-SOURCE-MANIFEST.md` | This file. Lists all active project-source documents and their purposes. |
 | `MAINORCH-HANDOFF.md` | Handoff document for the next MainOrch chat. Includes live decisions, folder structure, and next work order. |
+| `RESEARCH-OPERATIONS.md` | Defines OCC's research artifact system (R/A/B/D labels), packet requirements, provider-fit research routing, queue lifecycle, and validation flow. |
 
 ---
 
