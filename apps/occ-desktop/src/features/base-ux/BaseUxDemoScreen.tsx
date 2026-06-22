@@ -11,7 +11,6 @@ import type {
 import { PanelFrame } from './components/PanelFrame';
 import type { PanelFocusContract } from './components/PanelFrame';
 import { FloatingWindowLayer } from './components/FloatingWindowLayer';
-import { CommandThreadPanel } from './components/CommandThreadPanel';
 
 // State declared here is intentionally pre-wired ahead of panel slice integration.
 // Setters without current callers will gain callers when panel slices are wired.
@@ -79,12 +78,12 @@ export function BaseUxDemoScreen() {
         </PanelFrame>
 
         <PanelFrame panelId="thread" title="Command Thread" focus={focusContract} className="bux-area-thread">
-          <CommandThreadPanel
-            selectedProjectId={selectedProjectId}
-            selectedConversationId={selectedConversationId}
-            draftText={draftText}
-            onDraftChange={setDraftText}
-          />
+          <div className="bux-placeholder">
+            <span className="bux-placeholder-label">Command Thread</span>
+            <span className="bux-placeholder-note">
+              Command thread panel — independent implementation slice
+            </span>
+          </div>
         </PanelFrame>
 
         <PanelFrame panelId="controls" title="Controls and Status" focus={focusContract} className="bux-area-controls">

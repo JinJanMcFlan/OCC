@@ -86,12 +86,6 @@ export function CommandThreadPanel({
         body: text,
         labelTag: 'Demo entry — not sent',
       },
-      {
-        id: `sa-${ts}`,
-        role: 'acknowledgment',
-        body: 'Demo only — no provider, router, task, file action, or external request was used.',
-        labelTag: 'Demo acknowledgment',
-      },
     ]);
     onDraftChange('');
     textareaRef.current?.focus();
