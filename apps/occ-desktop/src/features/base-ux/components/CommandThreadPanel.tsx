@@ -92,9 +92,10 @@ export function CommandThreadPanel({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    // Ctrl+Enter (Win/Linux) or Cmd+Enter (macOS) sends.
-    // Plain Enter inserts a newline via default textarea behavior.
-    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+    // Plain Enter sends; Shift+Enter inserts a newline.
+    // Guard against IME composition (e.g. CJK input) so Enter only sends
+    // once composition is committed, not during candidate selection.
+    if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
       e.preventDefault();
       handleSend();
     }
@@ -106,11 +107,7 @@ export function CommandThreadPanel({
     : [];
   const visibleEntries = [...baseEntries, ...sessionEntries];
 
-  const isMac =
-    typeof navigator !== 'undefined' && /mac/i.test(navigator.platform);
-  const sendHint = isMac
-    ? 'Cmd+Return to send  ·  Return for new line'
-    : 'Ctrl+Enter to send  ·  Enter for new line';
+  const sendHint = 'Enter to send  ·  Shift+Enter for new line';
 
   return (
     <div className="ct-root">
