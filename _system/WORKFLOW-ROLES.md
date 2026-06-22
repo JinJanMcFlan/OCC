@@ -16,6 +16,12 @@ Work flows down. Problems flow up.
 
 Default flat. Deepen only on overflow.
 
+## Named-chat authority and continuity
+
+Creating a named orchestration chat authorizes it to begin and continue its assigned lane with Jonathan. Its opening handoff is a working brief, not a request for immediate MainOrch approval, an immediate return handoff, or immediate prompt creation. It begins by discussing and developing the work with Jonathan in normal human terms.
+
+The chat remains responsible for the original task through planning, execution coordination, review, iteration, and recommended next steps as the scope requires. Completing one phase — such as orientation, planning, organization, a specification, or an execution prompt — does not complete the original task. It returns a MainOrch handoff early only for a genuine cross-lane decision, material blocker, scope conflict, or meaningful discovery requiring higher-level review. Work already authorized by creating the chat does not require routine re-approval.
+
 ---
 
 ## Roles
@@ -28,7 +34,7 @@ MainOrch is the final project and product authority.
 
 ### SubOrch
 
-Handles one focused design, planning, or research problem too large for MainOrch to hold alongside everything else. Produces a clear output (a doc, a spec, a decision, a synthesis) and hands it back up to MainOrch.
+Handles one focused design, planning, or research problem too large for MainOrch to hold alongside everything else. Collaborates with Jonathan and remains active through its original scoped task as needed. It hands work back to MainOrch when it reaches a genuine decision-ready, execution-ready, final, or materially blocked result — not merely after an early planning, organization, or drafting phase.
 
 A SubOrch may remain one focused chat. A TaskManager layer is only needed when there are two or more TaskOrchs that need coordination. A one-chat task can remain at MainOrch, SubOrch, TaskOrch, or direct-execution level depending on its actual scale.
 
@@ -42,7 +48,9 @@ The chat the human converses in about a specific task. Manages its TaskRunners. 
 
 ### TaskRunner
 
-Writes the actual prompts to execution agents. One task. Iterates with the execution agent (prompt → result → check → next prompt) until the task is fully done, then writes a summary and closes.
+Writes the actual prompts to execution agents. One task. Iterates with the execution agent (prompt → result → check → next prompt) and continues until the original assigned task is complete, materially blocked, or explicitly transferred or re-scoped by MainOrch.
+
+Completing a planning, setup, or prompt-writing phase is not task completion. When they belong to its scope, the TaskRunner continues through execution follow-up, result audit, correction rounds, and next-step coordination.
 
 TaskRunner-owned work must not be delegated to an execution agent:
 - Prompt writing
@@ -159,16 +167,24 @@ A project-specific research-operations protocol may define internal `A#`, `B#`, 
 
 ---
 
+## Completion, handoff, and closure
+
+Completion is not the same as closure. A named orchestration chat does not reach closeout merely by stating that the chat is done. It reaches closeout only when its original task is complete, it is materially blocked outside its scope, or MainOrch explicitly transfers or ends the task.
+
+At real closeout, the chat provides what was completed and the supporting result or evidence; unresolved items or blockers; the recommended next step; and the recommended owner. When the result affects project direction, sequencing, or another lane, it also provides a concise MainOrch handoff with recommended next steps. For a fully self-contained result with no MainOrch relevance, it explicitly states why a MainOrch handoff is unnecessary. The chat may state that it is ready for closure, but Jonathan or MainOrch decides whether it is actually closed.
+
+---
+
 ## How a task flows
 
-1. Orient. A fresh chat reads the project files to confirm where the project is. State lives in files; the chat is today's working memory.
+1. Orient and begin. A fresh chat reads the project files to confirm where the project is, then begins collaborative work with Jonathan. State lives in files; the chat is today's working memory.
 2. MainOrch decides whether work is direction (stays here) or production (goes down).
 3. MainOrch breaks down a production task and decides whether it stays flat or needs a SubOrch.
-4. SubOrch (only if needed) works one focused problem, produces its output, hands back up.
+4. SubOrch (only if needed) works one focused problem with Jonathan and hands back up only when a genuine decision-ready, execution-ready, final, or materially blocked result is ready.
 5. TaskOrch (only if needed) manages runners under it.
-6. TaskRunner writes a self-contained prompt, sends it to an execution agent, and iterates until the task is done. Then writes a summary and closes.
+6. TaskRunner writes a self-contained prompt, sends it to an execution agent, and continues through the original task until it is complete, materially blocked, or explicitly transferred or re-scoped by MainOrch. It then provides the required closeout.
 7. Execution agent executes and returns the result.
-8. Results flow back up. The orchestrator checks returned work against project direction. Approval is the signal for the human to authorize any repository or deployment actions.
+8. Results flow back up when a real decision, blocker, or completed handoff is ready. The orchestrator checks returned work against project direction. Approval is the signal for the human to authorize any repository or deployment actions.
 
 ---
 
