@@ -1,0 +1,207 @@
+/* ── Base UX layout and component contract ──────────────────────────────────
+   Extends index.css CSS variables. Does not redefine :root tokens.
+   Minimum supported desktop size: 1280×800.
+   Body scroll is prevented by index.css (overflow: hidden on body).
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Root shell ─────────────────────────────────────────────────────────── */
+
+.bux-root {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Application chrome — max 40px ─────────────────────────────────────── */
+
+.bux-chrome {
+  height: 40px;
+  max-height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 10px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.bux-chrome-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-secondary);
+}
+
+.bux-demo-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: var(--demo-badge);
+  color: var(--demo-badge-text);
+  letter-spacing: 0.02em;
+}
+
+/* ── Four-panel desktop grid contract ───────────────────────────────────── *
+   Columns: 248px left | 1fr center (min 520px) | 320px right
+   Rows:    1fr main | 220px queue
+   Outer spacing: 8px padding, 8px gap
+   ─────────────────────────────────────────────────────────────────────── */
+
+.bux-workspace {
+  flex: 1;
+  min-height: 0;
+  min-width: 1280px;
+  display: grid;
+  grid-template-columns: 248px minmax(520px, 1fr) 320px;
+  grid-template-rows: 1fr 220px;
+  gap: 8px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.bux-area-projects { grid-area: 1 / 1 / 2 / 2; }
+.bux-area-thread   { grid-area: 1 / 2 / 2 / 3; }
+.bux-area-controls { grid-area: 1 / 3 / 2 / 4; }
+.bux-area-queue    { grid-area: 2 / 1 / 3 / 4; }
+
+/* ── Focus mode layout ──────────────────────────────────────────────────── *
+   Focused panel spans the full grid. Other panels hidden, remain mounted.
+   Esc exits focus (handled in BaseUxDemoScreen via keydown listener).
+   ─────────────────────────────────────────────────────────────────────── */
+
+.bux-workspace.bux-focus-mode .pf-panel:not(.pf-focused) {
+  display: none;
+}
+
+.bux-workspace.bux-focus-mode .pf-panel.pf-focused {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+/* ── PanelFrame ─────────────────────────────────────────────────────────── */
+
+.pf-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--panel-radius);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.pf-panel.pf-focused {
+  border-color: var(--accent-dim);
+}
+
+.pf-header {
+  height: 36px;
+  flex-shrink: 0;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pf-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.pf-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pf-demo-badge {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--demo-badge);
+  color: var(--demo-badge-text);
+}
+
+.pf-focus-btn {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.pf-focus-btn:hover:not(:disabled) {
+  background: var(--bg-item-hover);
+  color: var(--text-primary);
+}
+
+.pf-focus-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pf-panel.pf-focused .pf-focus-btn {
+  background: var(--accent-muted);
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+
+.pf-panel.pf-focused .pf-focus-btn:hover {
+  background: var(--accent-dim);
+  color: var(--text-primary);
+}
+
+/* Panel body — owns its own scroll area */
+.pf-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+.pf-body::-webkit-scrollbar { width: 3px; }
+.pf-body::-webkit-scrollbar-track { background: transparent; }
+.pf-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ── Foundation placeholder styles ─────────────────────────────────────── */
+
+.bux-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.bux-placeholder-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bux-placeholder-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.5;
+  max-width: 220px;
+  line-height: 1.5;
+}
