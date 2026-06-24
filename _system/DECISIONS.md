@@ -26,6 +26,24 @@ The deciding logic weighs five inputs, each a user-adjustable weight on top of a
 
 Non-urgent work can be deferred to off-peak windows or batch-API runs when that improves cost efficiency without violating user urgency or autonomy settings.
 
+### Sellable alpha and customer trust direction
+
+Sellable alpha means a user can pay because OCC saves meaningful time and generates real outputs worth paying for.
+
+The internal quality bar is that a user can request a bounded build, such as a creatively distinct simple game based on a reference, and OCC should materially progress or complete it autonomously while the user is away. This is not a promise of an already-completed capability and does not force a fuller v1 specification now.
+
+Preferred customer experience is one OCC account, one setup, managed multi-provider access, and a clear customer-controlled spending budget.
+
+Optional customer API keys and local AI are supported direction. Customer-owned capacity should lower OCC's fee/take for that usage and may be preferentially weighted by the user.
+
+Routing must serve customer budget, quality, outcome, and stated preference rather than hidden margin.
+
+Budget controls are launch-critical: visible spend, forecasts and explanations, limits at user/project/task/workspace levels, approval gates, alerts, hard stops, and kill-switch behavior.
+
+OCC must not promise unlimited managed frontier-model usage.
+
+This is approved direction, not finalized pricing, architecture, legal terms, security certification, or implemented capability.
+
 ### The app is the brain; models are swappable drivers
 
 The intelligence — routing, delegation, capability and pricing library, budget rules — lives in OCC. Any model can sit in any role. Model-agnostic by design.
@@ -77,6 +95,14 @@ OCC must not blindly retry state-changing work or claim automatic rollback unles
 ### Composer keyboard convention: Enter sends; Shift+Enter inserts a newline
 
 Enter sends the message; Shift+Enter inserts a newline. This is OCC's default familiar AI-chat interaction pattern. Ctrl/Cmd+Enter is not the primary required send shortcut. A user preference toggle for this basic behavior must not be added at this stage.
+
+### Security is phased, not a completed assurance claim
+
+Security must be developed as costed phases later: founder/alpha baseline, launch hardening, then high-security local/infrastructure operations.
+
+Current known baseline gaps include password-management and broader operational-security maturity.
+
+Security direction must not be turned into current marketing language, a completed assurance claim, or a certification claim without later evidence and approval.
 
 ---
 

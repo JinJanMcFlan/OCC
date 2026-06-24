@@ -59,6 +59,20 @@ Known intentionally unbuilt Base UX areas (not defects; not approved build scope
 
 **Founder Research Briefings [OCC]** is an authorized conversational lane. It begins with R7/A3 (privacy and provider-evidence governance), covers one research topic at a time, and produces concise founder-position handoffs. It does not launch research, write external prompts, edit files, or ratify architecture.
 
+**Sellable-alpha, budget, and trust direction** is approved direction. OCC alpha should save meaningful time and generate real outputs worth paying for. The internal quality bar is that a user can request a bounded build, such as a creatively distinct simple game based on a reference, and OCC should materially progress or complete it autonomously while the user is away.
+
+This quality bar is not a promise of an already-completed capability, not a finalized v1 specification, and not public capability language.
+
+Preferred customer experience is one OCC account, one setup, managed multi-provider access, and a clear customer-controlled spending budget. Optional customer API keys and local AI are supported direction. Customer-owned capacity should lower OCC's fee/take for that usage and may be preferentially weighted by the user.
+
+Routing must serve customer budget, quality, outcome, and stated preference rather than hidden margin. Budget controls are launch-critical: visible spend, forecasts and explanations, limits at user/project/task/workspace levels, approval gates for costly work, alerts, hard stops, and kill-switch behavior.
+
+There is no unlimited managed frontier-model promise.
+
+Security must be developed as costed phases later: founder/alpha baseline, launch hardening, then high-security local/infrastructure operations. Current known baseline gaps include password-management and broader operational-security maturity.
+
+The distinction stays explicit: this is approved direction, not finalized pricing, architecture, legal terms, security certification, or implemented capability.
+
 ---
 
 ## What can continue now
@@ -96,4 +110,6 @@ Core router implementation remains blocked pending a MainOrch-approved Router Bu
 - No real filesystem folder binding.
 - No VS Code connector.
 - No persistence or database.
+- Managed multi-provider access, BYOK/local-AI usage treatment, customer-visible budget controls, and kill-switch behavior are not implemented yet.
+- Pricing, packaging, legal terms, security certification, and external security language are not finalized.
 - OCC's ChatGPT project container must be kept in sync with `_system` on disk.
