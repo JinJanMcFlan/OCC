@@ -20,6 +20,8 @@
 `D:\studio-tools\OCC\_design\OCC-UI-Visual-Direction-Handoff.txt`
 A consolidated shared-source summary lives at `_system\APP-VISUAL-DIRECTION.md`.
 
+**App Visuals direction has expanded into a documented Living Workspace direction.** The founder's intent is now preserved verbatim and distilled into internal principles at `_system\FOUNDER-DIRECTION.md`. The detailed visual and product direction handoff lives at `_design\OCC-LIVING-WORKSPACE-DIRECTION.md`. Concept-image exploration is the next creative step for this lane. This is unbuilt visual and product direction — it is not current functional app behavior and does not affect the static shell boundary. B2 remains the next router-governance work item and is a separate lane.
+
 **Documentation consolidation and Git baseline** are complete. All active `_system` documents have been rewritten. Historical foundation records are archived at `_archive\foundation-records\`. Restricted orchestration-only historical material is stored outside the OCC repository.
 
 **Bounded router research queue R1–R5** is complete, audited, preserved, committed, and pushed. All five research runs are preserved under `_research\findings\`. The final synthesis audit is at `_research\findings\ROUTER-RESEARCH-SYNTHESIS-AUDIT.md`. The router completion handoff is at `_handoffs\ROUTER-RESEARCH-COMPLETION-HANDOFF.md`. Router-research completion checkpoint: commit `099b9ae`.

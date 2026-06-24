@@ -15,6 +15,7 @@ This manifest lists every active `_system` file and its purpose.
 | `GIT-WORKFLOW.md` | Safe git rules for any agent touching a repository. |
 | `RESEARCH-DIRECTION.md` | High-level research department source: domains, hypotheses, posture, research map. |
 | `APP-VISUAL-DIRECTION.md` | Consolidated visual direction for Base UX, Presentation Mode, and related views. |
+| `FOUNDER-DIRECTION.md` | Internal founder source: preserved founder intent, distilled product/experience principles, candidate messaging, and communication boundaries. |
 | `PROJECT-SOURCE-MANIFEST.md` | This file. Lists all active project-source documents and their purposes. |
 | `MAINORCH-HANDOFF.md` | Handoff document for the next MainOrch chat. Includes live decisions, folder structure, and next work order. |
 | `RESEARCH-OPERATIONS.md` | Defines OCC's research artifact system (R/A/B/D labels), packet requirements, provider-fit research routing, queue lifecycle, and validation flow. |

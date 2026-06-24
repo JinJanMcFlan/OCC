@@ -96,6 +96,26 @@ Working names under consideration: Mind Map View, Flow View, Task Tree View, Dep
 
 ---
 
+## Living Workspace layer
+
+**Design motto:** `Quiet precision with a living substrate.`
+
+Work Mode (Base UX), Flow View, and Presentation Mode are three living expressions of the same workspace — not separate products. They differ in arrangement and permitted visual expression. All three are alive; the substrate beneath them breathes with the state of work.
+
+The **Living Ambient Intelligence Field** is OCC's subtle abstract visual body language. It expresses work state and the user's selected workspace style. It is not animated wallpaper, a random gradient blob, or visual noise. It scales from nearly subconscious in Work Mode to fully spatial in Presentation Mode.
+
+**Visual intensity is a separate user control from layout mode.** A user may be in Work Mode at higher intensity or Presentation Mode at low intensity. These are independent settings.
+
+**Overseer** is the current placeholder name for a future abstract assistant-presence direction — a tiny, refined, computer-native form that lives in the Command Thread without dominating it. It is a future direction, not an implemented character system, not a humanoid avatar, and not a fixed design.
+
+**What is not yet built:** Animation, ambient intelligence field behavior, Overseer avatar behavior, adaptive focus visuals, personalized intake, spatial graph behavior, and real task-state-driven visuals are not yet implemented. This layer is direction, not current functionality. The existing static shell boundaries established in `_architecture\BASE-UX-SHELL-BOUNDARY.md` remain intact.
+
+For full direction, see:
+- `_system\FOUNDER-DIRECTION.md` — founder intent, distilled product and experience principles, candidate messaging, and communication boundaries
+- `_design\OCC-LIVING-WORKSPACE-DIRECTION.md` — full visual and product direction handoff
+
+---
+
 ## AR / VR — Future direction only
 
 Presentation Mode should be designed so it could eventually translate into AR: spatial graph, depth-based focus, floating task objects, dependency lines, pinned objects, voice or gesture navigation, human approval cards in space.
