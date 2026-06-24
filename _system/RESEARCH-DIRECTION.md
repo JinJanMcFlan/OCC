@@ -99,7 +99,7 @@ Where an item is not yet known, the packet must state that directly rather than 
 
 Founder Research Briefings Wave 1 produced the following non-binding future research candidates. Each candidate requires a dedicated approved research lane and a Research Packet Declaration before launch.
 
-None is current router implementation scope. None delays B1 or D1 by default.
+None is current router implementation scope. None delays B1, B2, D1, or router implementation by default.
 
 1. Privacy-preserving task packaging and data-egress controls.
 2. Local-first memory and privacy-aware retrieval.
@@ -107,6 +107,17 @@ None is current router implementation scope. None delays B1 or D1 by default.
 4. Subscription-native workspace interoperability and canonical project sync.
 5. Extensible connector/provider onboarding and verification.
 6. Enterprise internal delivery mode and future multi-OCC federation.
+7. Self-updating intelligence governance, privacy tiers, and local-versus-shared operational learning.
+
+   This candidate addresses how OCC receives and applies centrally researched public and provider intelligence updates while preserving local user control. Governing principles:
+
+   - OCC Global may distribute centrally researched public/provider intelligence updates (provider releases, pricing, capability signals, deprecations).
+   - A local OCC compares those updates against its own local hardware, models, observed latency/cost, privacy posture, user budget, user preferences, and verified local evidence. Global intelligence informs local routing; it never silently overrides the user's local reality.
+   - A private/local-only user can receive public intelligence updates without contributing project content, prompts, outputs, credentials, filenames, logs, or work history back to OCC Global.
+   - Any shared operational learning is a separate, explicit future opt-in and requires data minimization, clear explanation, privacy review, and user control.
+   - Frequent refresh for popular fast-moving providers/models is a future operational possibility, potentially daily from public/official sources; exact cadence is not a ratified current requirement.
+
+   This candidate does not delay A7, B2 definition, D1, or router implementation. It requires a dedicated research packet before launch and is not a current implementation commitment or a finalized privacy-tier product design.
 
 Credential security and credential storage require separate expert-grade research, implementation planning, and review before any build commitment.
 

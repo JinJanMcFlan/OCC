@@ -1,6 +1,6 @@
 # OCC — Current State
 
-**Last updated:** 2026-06-23
+**Last updated:** 2026-06-23 (B1 completion reconciliation)
 **Read order:** `OCC-ALIGNMENT.md` (identity) → this file (where we are) → `DECISIONS.md` (active calls).
 
 ---
@@ -31,15 +31,17 @@ A consolidated shared-source summary lives at `_system\APP-VISUAL-DIRECTION.md`.
 - R9 — Lightweight Work Provenance and Replay Design [OCC], audited as A5
 - R15 — Folder Context and Local-First Privacy Boundary [OCC], audited as A6
 
-Raw-research preservation commit: `513b108`. Audit commit: `8972d23`. R6 did not start because Gemini reached its daily Deep Research limit before R6 could run; R6 is deferred pending restored external capacity. R10–R21 remain conditional and none are launched or approved.
+Raw-research preservation commit: `513b108`. Audit commit: `8972d23`. R6 did not start because Gemini reached its daily Deep Research limit before R6 could run; R6 is deferred pending restored external capacity. R10–R14 and R16–R21 remain conditional and must not be treated as launched or approved.
 
 Detailed handoff: `_handoffs\WAVE-1-RESEARCH-STATUS-HANDOFF.md`
 
 **Founder Research Briefings Wave 1** is complete for R7, R8, R9, and R15. The briefing cycle produced approved founder-level product and policy direction covering customer-outcome advocacy, Protected / Smart Default privacy, state-changing recovery, local-first deep memory, truthful provenance, canonical project context, scoped connector access, cost-aware legitimate access, and standardized connector direction. Outcome handoff: `_handoffs\FOUNDER-BRIEFINGS-WAVE-1-OUTCOME-HANDOFF.md`.
 
+**B1 — Router Scenario Corpus [OCC]** is complete and durable. Artifact: `_research\benchmarks\B1-ROUTER-SCENARIO-CORPUS.md`. Handoff: `_handoffs\B1-ROUTER-SCENARIO-CORPUS-HANDOFF.md`. Completion commit: `d3c4450`, pushed to `origin/main`. B1 establishes behavior-level scenarios only. It does not ratify router architecture, scoring, storage, recovery mechanics, connector implementation, privacy packaging, credentials, B2, D1, or router code. TaskRunner#3 completed B1 and remains open as the operational research/benchmark lane, waiting for its next contained assignment.
+
 **Base UX desktop shell** is built and validated. An isolated, locally runnable desktop shell exists at `apps\occ-desktop\` using Electron Forge, Vite, React, and TypeScript. It implements the four-panel Base UX layout (left: projects and conversation tree; center: command thread and composer; right: local controls and status placeholders; bottom: queue with five visual states). This shell is intentionally isolated from router, data, and provider architecture — all of which remain unimplemented and locked pending research. Accepted initial app-shell checkpoint: commit `28384c2`. Boundary document: `_architecture\BASE-UX-SHELL-BOUNDARY.md`.
 
-**Base UX Command Thread** is complete and mounted in the live Electron shell. The development shell can be launched at any time through `._Human\OCC Dev Launch.cmd` (resolves to `apps\occ-desktop` and runs `npm run start`; terminal stays open while the app is running). The mounted Command Thread provides a compact project/conversation context bar, a persistent truthful status line (`UI preview — response engine not connected`), a selected local preview thread, local loading/empty/unavailable states, and a composer with standard keyboard behavior (Enter sends; Shift+Enter inserts a newline; IME composition does not accidentally send; empty or whitespace-only input disables Send). Local send appends only the user's text to temporary in-memory UI state and clears the composer. The thread is intentionally presentation-only, static, and local — no routing, provider, task, file, background-work, network, IPC, persistence, or external-action behavior. TypeScript and lint both passed. Visual launch was confirmed before the final shortcut correction. One brief manual acceptance check remains at the next app open: confirm Enter sends and Shift+Enter inserts a newline. Commits: `534e113`, `9fbc25c`, `19a2fb8`, `a20e851`, `62fd02e`.
+**Base UX Command Thread** is complete and mounted in the live Electron shell. The development shell can be launched at any time through `._Human\OCC Dev Launch.cmd` (resolves to `apps\occ-desktop` and runs `npm run start`; terminal stays open while the app is running). The mounted Command Thread provides a compact project/conversation context bar, a persistent truthful status line (`UI preview — response engine not connected`), a selected local preview thread, local loading/empty/unavailable states, and a composer with standard keyboard behavior (Enter sends; Shift+Enter inserts a newline; IME composition does not accidentally send; empty or whitespace-only input disables Send). Local send appends only the user's text to temporary in-memory UI state and clears the composer. The thread is intentionally presentation-only, static, and local — no routing, provider, task, file, background-work, network, IPC, persistence, or external-action behavior. TypeScript and lint both passed. Visual launch was confirmed before the final shortcut correction. Jonathan performed the final manual keyboard acceptance check: Enter sends; Shift+Enter inserts a newline. SubOrch#5 is formally closed. Commits: `534e113`, `9fbc25c`, `19a2fb8`, `a20e851`, `62fd02e`.
 
 Known intentionally unbuilt Base UX areas (not defects; not approved build scope):
 
@@ -57,7 +59,7 @@ Known intentionally unbuilt Base UX areas (not defects; not approved build scope
 
 **Main ResearchOrch direction** is active. OCC's research engine covers both market and capability intelligence and longer-running frontier solution research.
 
-**Research Direction v1.1 and `RESEARCH-OPERATIONS.md` are active** and mirrored into the ChatGPT OCC project sources. Wave 1 external research (R7, R8, R9, R15) is complete and audited. R6 is deferred pending restored external capacity. R10–R21 are conditional and must not be treated as launched or approved.
+**Research Direction v1.1 and `RESEARCH-OPERATIONS.md` are active** and mirrored into the ChatGPT OCC project sources. Wave 1 external research (R7, R8, R9, R15) is complete and audited. R6 is deferred pending restored external capacity. R10–R14 and R16–R21 are conditional and must not be treated as launched or approved.
 
 **Founder Research Briefings [OCC]** completed its Wave 1 R7/R8/R9/R15 founder-briefing cycle and returned approved founder-level product and policy direction. It did not launch research, write external prompts, edit files, or ratify technical architecture.
 
@@ -95,23 +97,26 @@ Core router implementation remains blocked pending a MainOrch-approved Router Bu
 
 ## Current work order
 
-1. Re-upload changed `_system` files to the ChatGPT OCC project sources after this checkpoint.
-2. Complete the short Command Thread keyboard acceptance check (launch via `._Human\OCC Dev Launch.cmd`; confirm Enter sends and Shift+Enter inserts a newline) and formally close SubOrch#5 once it passes.
-3. TaskRunner#3 may now create `B1 — Router Scenario Corpus`.
-4. B1 must cover customer-outcome routing, evidence freshness/uncertainty, protected-context handling, safe state-changing recovery, and truthful provenance requirements.
-5. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
-6. Do not begin router-core implementation until an approved D1 exists.
-7. The six new research candidates remain non-blocking and require dedicated approval before launch.
+1. Manually re-upload the updated `_system` folder to the ChatGPT OCC project sources.
+2. SubOrch#5 is complete and closed. No further work is assigned to it.
+3. B1 is complete and durable. TaskRunner#3 remains open and is waiting for its next contained assignment.
+4. In a fresh MainOrch chat, assign TaskRunner#3 the contained `A7 — Router Governance Decision Brief [OCC]` task. A7 should translate existing R7/A3, R8/A4, R9/A5, founder direction, and B1 scenarios into founder-readable alternatives, defaults, risks, and consequences for split-gate interpretation and semantic-feedback governance. A7 is internal decision support only: no external research launch, no code, no architecture ratification.
+5. Use A7 to settle split-gate and semantic-feedback governance decisions. Both must be resolved before B2 and D1 can proceed.
+6. Define whether B2 is needed only after those decisions. B2 has no approved scope yet.
+7. D1 remains blocked until unresolved decisions and any required benchmark and acceptance work are complete.
+8. Router-core code remains unauthorized.
+9. The seven founder-derived research candidates remain non-binding and require dedicated research packets and approval before launch.
 
 ---
 
 ## What is not yet built
 
 - Router-core architecture is unimplemented and locked pending a MainOrch-approved `D1 — Router Build Package [OCC]`.
-- `B1 — Router Scenario Corpus` is not yet created. TaskRunner#3 may now create it, using the approved founder-level direction and R7–R9 scenario requirements.
+- `A7 — Router Governance Decision Brief [OCC]` is proposed as TaskRunner#3's next contained assignment but is not yet started.
 - Final router logic, shared record model, scoring formula, storage changes, automatic rerouting, and automatic semantic confidence updates are not approved.
 - Split-gate interpretation and semantic-feedback governance are unresolved MainOrch decisions; both must be resolved before B2 and D1.
-- The six founder-derived research candidates are not active research runs, not router implementation scope, and do not delay B1 or D1 by default.
+- B2 has no approved scope; it will be defined only after split-gate and semantic-feedback governance decisions are resolved.
+- The seven founder-derived research candidates are not active research runs, not router implementation scope, and do not delay A7, B2, D1, or router implementation by default.
 - No OCC v1 scope has been defined.
 - Model and provider registry is stale; refresh at build time.
 - No real provider, model, cost, or API integration.

@@ -50,15 +50,14 @@ The thread is intentionally presentation-only, static, and local. It implements 
 
 ---
 
-## 5. Remaining manual keyboard acceptance check
+## 5. Manual keyboard acceptance check — complete
 
-One brief human acceptance check remains before SubOrch#5 can be formally closed:
+Jonathan performed the final acceptance check:
 
-1. Launch the app via `._Human\OCC Dev Launch.cmd`
-2. Confirm Enter sends the message
-3. Confirm Shift+Enter inserts a newline without sending
+- Enter sends the message. ✓
+- Shift+Enter inserts a newline without sending. ✓
 
-This is the only condition remaining for formal SubOrch#5 closeout.
+SubOrch#5 is formally closed. Its original task is finished. It must not receive unrelated work.
 
 ---
 
@@ -109,13 +108,11 @@ No router, provider, inference, filesystem, persistence, task queue, approval fl
 
 ---
 
-## 10. Recommended tomorrow start
+## 10. Recommended next start
 
-**Primary lane:** Begin `Founder Research Briefings [OCC]` with R7/A3 (Capability Evidence Freshness and Update Governance — privacy and provider-evidence governance). Cover one research topic per session and produce a concise founder-position handoff.
+**Primary lane:** `Founder Research Briefings [OCC]` with R7/A3 (Capability Evidence Freshness and Update Governance — privacy and provider-evidence governance) is the intended next lane. Cover one research topic per session and produce a concise founder-position handoff.
 
-**Prerequisite completion:** Before or during the first session, run the short Command Thread keyboard acceptance check (item 5 above) and formally close SubOrch#5 once it passes.
-
-Do not begin unrelated Base UX work or new research lanes before SubOrch#5 is formally closed.
+SubOrch#5 is closed; the keyboard acceptance check is complete. Base UX work within the approved shell boundary may resume independently of SubOrch#5.
 
 ---
 
