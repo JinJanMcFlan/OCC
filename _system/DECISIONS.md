@@ -26,6 +26,14 @@ The deciding logic weighs five inputs, each a user-adjustable weight on top of a
 
 Non-urgent work can be deferred to off-peak windows or batch-API runs when that improves cost efficiency without violating user urgency or autonomy settings.
 
+### Customer-outcome advocacy and cost integrity
+
+OCC optimizes for the customer's actual outcome: privacy, cost, quality, control, and reliable completion, not OCC revenue or hidden margin.
+
+OCC must not steer users toward OCC-paid API usage merely because OCC makes more money. It should favor customer-owned API keys, local models, existing legitimate subscriptions, and other lower-cost legitimate routes whenever those genuinely serve the user better.
+
+OCC must not become merely an API manager. This is approved product direction, while exact pricing, routing weights, billing treatment, and implementation mechanics remain open.
+
 ### Sellable alpha and customer trust direction
 
 Sellable alpha means a user can pay because OCC saves meaningful time and generates real outputs worth paying for.
@@ -44,6 +52,28 @@ OCC must not promise unlimited managed frontier-model usage.
 
 This is approved direction, not finalized pricing, architecture, legal terms, security certification, or implemented capability.
 
+### Protected / Smart Default privacy posture
+
+OCC is agentic inside the privacy rules selected by the user. It should not constantly interrupt users with routine privacy popups.
+
+Sensitive project context should prefer local processing or verified safer remote routes. Highly sensitive credentials, private keys, access tokens, and secret-bearing logs are protected context: they must never be treated as ordinary model context or silently sent remotely.
+
+A rare, clear exception prompt is appropriate only when a genuinely heavy or important task cannot reasonably complete locally and would require remote processing of identified sensitive context.
+
+Local redaction, tokenization, privacy-preserving task packaging, and data-egress controls remain future research. Replacing names does not automatically make a task safe.
+
+No credential-storage solution is approved. Credential storage and handling require dedicated research plus expert-grade implementation and review before any build commitment.
+
+### Local-first deep memory and truthful provenance
+
+OCC's intended direction is persistent, local-first continuity across chats, providers, projects, and task history, so changing models does not erase useful context.
+
+Deep memory is the expected default. Users must later be able to reduce its scope, erase it, or disable it.
+
+Keep semantic/RAG memory distinct from provenance and work history. Semantic/RAG memory supports useful recall; provenance records what was requested, what changed, why OCC routed work, what was sent, what happened, what it cost, and what was approved.
+
+Exact storage, index, retention, deletion, and retrieval choices remain open. Customer contribution of content or diagnostic patterns to improve OCC must be voluntary, honest, plainly explained, and opt-in whenever meaningful user content is involved. This is future policy and research work, not an approved telemetry program.
+
 ### The app is the brain; models are swappable drivers
 
 The intelligence — routing, delegation, capability and pricing library, budget rules — lives in OCC. Any model can sit in any role. Model-agnostic by design.
@@ -56,6 +86,18 @@ Decided by a classifier and rule layer over a knowledge base of what each agent 
 
 OCC is IDE-scale and standalone. It reaches into the editor via an installable connector plugin, not by living inside VS Code.
 
+### Canonical project context and scoped connector access
+
+One canonical project lives on the user's disk. OCC coordinates how connected AI tools see that project, reducing repeated manual upload into separate AI tools.
+
+Candidate access model: controlled task packages are the normal safe baseline; trusted native workspace connectors may receive user-approved scoped project access; managed sync/publish routes may be used where an official platform supports them; bounded task-package handoff remains the fallback where direct access or sync is unavailable.
+
+OCC must never assume a connected tool receives the whole project. Explicit connector permissions include project scope for one selected project and system scope across eligible OCC projects and broader delegated work.
+
+System scope requires stronger intentional confirmation: a clear consequence screen, required acknowledgement checkbox, and a final deliberate action. Even broad connector scope does not automatically include credentials, private keys, or protected secret areas.
+
+These are approved access principles; connector protocol design, sync implementation, and storage mechanics remain open.
+
 ### Storage direction: JSON / in-memory
 
 No SQLite commitment. Current storage direction is JSON / in-memory.
@@ -63,6 +105,22 @@ No SQLite commitment. Current storage direction is JSON / in-memory.
 ### LiteLLM is not OCC product architecture
 
 LiteLLM is a personal cost-saving config for the founder's own orchestrator slot — not a product requirement and not baked into OCC.
+
+### Cost-aware legitimate access and manual model choice
+
+OCC should recognize approved customer-owned API keys, local models, legitimate subscription-backed routes, and coding tools.
+
+For normal chat, users should retain manual model choice. API-backed choices should show an honest predicted cost based on prompt, context, and output estimates. Subscription-backed routes should be labelled as included under the user's subscription, subject to provider availability, official constraints, and rate limits.
+
+OCC must not promise unlimited subscription access or imply that OCC may legally proxy third-party subscriptions. Subscription integration details remain open.
+
+### Standardized connector direction and official-interface boundary
+
+OCC should move toward a standardized connector/provider framework covering capability description, scoped permissions, auditability, revocation, safe task delivery, result ingestion, and official-interface boundaries.
+
+OCC research may discover and recommend possible connectors. OCC must not silently install unverified connectors, grant itself permissions, bypass official interfaces, or broaden user access without authorization.
+
+This is approved direction for future connector evaluation; it is not a connector implementation, protocol commitment, or source-code authorization.
 
 ### No timelines. No "MVP" language. Acronyms uppercase.
 
@@ -90,7 +148,11 @@ OCC's first standalone desktop shell uses Electron Forge, Vite, React, and TypeS
 
 ### State-changing retry boundary
 
-OCC must not blindly retry state-changing work or claim automatic rollback unless idempotency, rollback behavior, or an explicit approved recovery plan is known before execution. Read-only and reversible work may use later-approved cautious fallback behavior.
+OCC must not blindly retry state-changing work or claim automatic rollback unless idempotency, rollback behavior, or an explicit approved recovery plan is known before execution.
+
+For state-changing actions, OCC should validate what actually happened through cheap deterministic or provider-native checks where available; retry only when verified idempotency or approved recovery support exists; avoid spending model tokens on routine validation; remain within bounded time, attempt, and cost limits; and escalate to the user only after approved recovery paths are exhausted or the outcome remains materially unknown.
+
+The exact recovery ladder, limits, idempotency registry, and technical architecture remain open. This direction shapes B1 scenarios but does not authorize implementation.
 
 ### Composer keyboard convention: Enter sends; Shift+Enter inserts a newline
 

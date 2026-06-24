@@ -12,6 +12,12 @@ OCC is provider-agnostic. No single provider, model, framework, or protocol is r
 
 OCC is local-first where useful. Projects bind to real disk folders. Compute that can run locally, should.
 
+OCC optimizes for the customer's actual outcome: privacy, cost, quality, control, and reliable completion. It must not steer work toward OCC-paid API usage merely because OCC makes more money.
+
+OCC must not become merely an API manager. It is the orchestration and continuity layer for useful work across models, tools, local context, routing, delegation, and completion.
+
+The user's canonical project context lives on their disk. OCC coordinates how connected AI tools see that project through explicit, scoped access rather than assuming every tool receives the whole project.
+
 OCC is a stable survival layer over changing AI tools, providers, pricing, and capability. As the landscape shifts, OCC's control layer remains constant while the drivers beneath it change.
 
 OCC may incorporate locally hosted cognitive execution packages beneath its provider-agnostic control layer. These packages can make multi-model work more efficient, private, and controllable than ordinary text-based orchestration.

@@ -93,6 +93,29 @@ Every future research packet must declare:
 
 Where an item is not yet known, the packet must state that directly rather than infer certainty. A candidate hypothesis must remain distinguishable from evidence-backed findings, active decisions, and future possibilities.
 
+---
+
+## Founder-Derived Non-Binding Candidate Portfolio
+
+Founder Research Briefings Wave 1 produced the following non-binding future research candidates. Each candidate requires a dedicated approved research lane and a Research Packet Declaration before launch.
+
+None is current router implementation scope. None delays B1 or D1 by default.
+
+1. Privacy-preserving task packaging and data-egress controls.
+2. Local-first memory and privacy-aware retrieval.
+3. Recovery reliability and low-cost deterministic validation.
+4. Subscription-native workspace interoperability and canonical project sync.
+5. Extensible connector/provider onboarding and verification.
+6. Enterprise internal delivery mode and future multi-OCC federation.
+
+Credential security and credential storage require separate expert-grade research, implementation planning, and review before any build commitment.
+
+Company/internal delivery is a future direction for work, outputs, and delegated tasks to colleagues or approved internal applications, with identity, permissions, audit, and revocation.
+
+Multi-OCC federation is a separate advanced future direction. It remains disabled by default, is never encouraged for ordinary users, and would require explicit high-consequence confirmation with clear warnings about compounding API spend, conflicting changes, file damage, data exposure, and recovery limits.
+
+Legal wording and liability treatment require separate professional review.
+
 ## Beyond the Current Guardrail
 
 This section is optional. Include it only when there is a credible adjacent observation, contradiction, opportunity, or possible breakthrough that is relevant enough to preserve but not active enough to alter current work. Limit it to three items unless MainOrch authorizes otherwise.

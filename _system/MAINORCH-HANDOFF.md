@@ -24,7 +24,13 @@ Full identity: `_system\OCC-ALIGNMENT.md`
 - OCC's research engine covers market/capability intelligence and frontier solution research.
 - Cognitive consolidation is a living founder hypothesis and research pillar — not proven, not a locked dependency.
 - Research direction is evidence-governed and may deepen, redirect, park, or integrate.
-- **State-changing retry boundary (ratified):** OCC must not blindly retry state-changing work or claim automatic rollback unless idempotency, rollback behavior, or an explicit approved recovery plan is known before execution.
+- Customer-outcome advocacy is ratified: OCC optimizes for customer privacy, cost, quality, control, and reliable completion, not OCC revenue or hidden margin. OCC must not become merely an API manager.
+- Protected / Smart Default privacy is ratified: OCC is agentic inside user-selected privacy rules, protected secrets must not become ordinary model context or be silently sent remotely, and credential storage is not approved.
+- Local-first deep memory is approved direction and remains distinct from truthful provenance/work history.
+- One canonical project lives on the user's disk; connected-tool access must be explicit and scoped.
+- Cost-aware legitimate access is approved direction: recognize customer-owned API keys, local models, legitimate subscription-backed routes, and coding tools while preserving manual model choice for normal chat.
+- Standardized connector direction is approved, with auditability, revocation, scoped permissions, safe task delivery, result ingestion, and official-interface boundaries.
+- **State-changing retry boundary (ratified):** OCC must not blindly retry state-changing work. For state-changing actions, validate outcomes through cheap deterministic or provider-native checks where available, retry only with verified idempotency or approved recovery support, stay within bounded limits, and escalate only after approved paths are exhausted or the outcome remains materially unknown.
 
 **Pending — not yet ratified:**
 - Split-gate interpretation (see `_system\DECISIONS.md` pending section). Must be resolved before B2 and D1.
@@ -65,8 +71,8 @@ See `_system\PROJECT-SOURCE-MANIFEST.md` for the full list and purpose of each f
 - `[Complete] (operational research) TaskRunner#2 [OCC]` — closed after managing Wave 1 external research (R7, R8, R9, R15) and producing internal audits A3–A6. Succeeded by TaskRunner#3.
 - `(app visuals) SubOrch#1 [OCC]` — **creative exploration lane only.** Not a build-spec or implementation chat. Raw handoff at `_design\OCC-UI-Visual-Direction-Handoff.txt`; summary at `_system\APP-VISUAL-DIRECTION.md`.
 - `Main ResearchOrch [OCC]` — **high-level frontier and research direction only.** Does not operate the working research queue; does not write worker research prompts. Preserve chat history.
-- `[Authorized] Founder Research Briefings [OCC]` — conversational founder-understanding lane. Begins with R7/A3 (privacy and provider-evidence governance). Covers one research topic at a time. Produces concise founder-position handoffs. Does not launch research, write external prompts, edit files, or ratify architecture.
-- `[In Progress] (operational research) TaskRunner#3 [OCC]` — authorized to replace TaskRunner#2 for the next research phase. Receives founder-briefing handoffs and creates `B1 — Router Scenario Corpus` only after founder discussion of R7, R8, and R9.
+- `[Complete] Founder Research Briefings [OCC]` — completed the Wave 1 R7/R8/R9/R15 founder-briefing cycle and returned approved founder-level product and policy direction. Outcome handoff: `_handoffs\FOUNDER-BRIEFINGS-WAVE-1-OUTCOME-HANDOFF.md`.
+- `[In Progress] (operational research) TaskRunner#3 [OCC]` — authorized to create `B1 — Router Scenario Corpus`. B1 must cover customer-outcome routing, evidence freshness/uncertainty, protected-context handling, safe state-changing recovery, and truthful provenance requirements.
 - `[In Progress] (Base UX command thread) SubOrch#5 [OCC]` — Command Thread is complete and mounted. Ready for formal closeout pending only the short manual keyboard acceptance check (Enter/Shift+Enter). Implementation lane must not begin unrelated new work before closeout.
 - Fresh `MainOrch [OCC]` — next overall project-control chat (the recipient of this document).
 
@@ -95,6 +101,17 @@ Commits:
 - `8972d23` — audit commit
 
 R6 is deferred; Gemini reached its daily Deep Research limit before R6 could start. R6 must not displace build-critical research when capacity returns. R10–R21 remain conditional and must not be treated as launched or approved.
+
+Founder Research Briefings Wave 1 also produced a non-binding future research candidate portfolio:
+
+1. Privacy-preserving task packaging and data-egress controls.
+2. Local-first memory and privacy-aware retrieval.
+3. Recovery reliability and low-cost deterministic validation.
+4. Subscription-native workspace interoperability and canonical project sync.
+5. Extensible connector/provider onboarding and verification.
+6. Enterprise internal delivery mode and future multi-OCC federation.
+
+These candidates are not active research runs, not router implementation scope, and do not delay B1 or D1 by default. Each requires a dedicated approved research lane and Research Packet Declaration before launch. Credential security/storage requires separate expert-grade research and review. Multi-OCC federation remains disabled-by-default future research and is separate from ordinary company/internal delivery.
 
 Earlier checkpoints:
 
@@ -128,8 +145,7 @@ Full workflow: `_system\WORKFLOW-ROLES.md`
 
 1. Re-upload changed `_system` files to the ChatGPT OCC project sources.
 2. Complete the short Command Thread keyboard acceptance check (launch via `._Human\OCC Dev Launch.cmd`; confirm Enter sends and Shift+Enter inserts a newline). Formally close SubOrch#5 after this check passes.
-3. Run `Founder Research Briefings [OCC]` to discuss R7, R8, and R9 findings (one topic per session; produce founder-position handoffs). This is the first substantive next-session lane.
-4. Open `[In Progress] (operational research) TaskRunner#3 [OCC]` after founder discussions to create `B1 — Router Scenario Corpus`.
-5. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
-6. Do not launch R10–R21 without explicit MainOrch approval.
-7. Do not code core router architecture until an approved `D1 — Router Build Package [OCC]` exists.
+3. TaskRunner#3 may now create `B1 — Router Scenario Corpus`.
+4. Resolve split-gate interpretation and semantic-feedback governance before B2 and D1.
+5. Do not code core router architecture until an approved `D1 — Router Build Package [OCC]` exists.
+6. Do not automatically launch any candidate research.
