@@ -32,9 +32,11 @@ Full identity: `_system\OCC-ALIGNMENT.md`
 - Standardized connector direction is approved, with auditability, revocation, scoped permissions, safe task delivery, result ingestion, and official-interface boundaries.
 - **State-changing retry boundary (ratified):** OCC must not blindly retry state-changing work. For state-changing actions, validate outcomes through cheap deterministic or provider-native checks where available, retry only with verified idempotency or approved recovery support, stay within bounded limits, and escalate only after approved paths are exhausted or the outcome remains materially unknown.
 
-**Pending — not yet ratified:**
-- Split-gate interpretation (see `_system\DECISIONS.md` pending section). Must be resolved before B2 and D1.
-- Semantic-feedback governance (see `_system\DECISIONS.md` pending section). Must be resolved before B2 and D1.
+**Ratified (A7 — 2026-06-24):**
+- **Adaptive split-gate governance:** OCC may execute only a verified route meeting binding requirements, outcome needs, privacy rules, budget ceilings, and existing approval scope. Materially relevant blocked or unavailable alternatives must remain visible with the reason shown. A verified equal-or-better substitute triggers a visible 10-second override countdown in the Command Thread before OCC proceeds. User-selected routes are treated as likely preferred; OCC must offer a meaningful opportunity to restore or confirm before abandoning. Substitution may not override explicit locks, required new approvals, protected-context rules, state-changing safeguards, or hard budget limits. Timer lengths beyond the 10-second default, notification channels, and implementation mechanics remain open.
+- **Adaptive task-fit and semantic-feedback governance:** OCC may make small, reversible, task- or project-local routing adjustments during active work based on observed evidence, staying traceable within binding requirements, route locks, privacy rules, approval scope, and budget ceilings. A single event must not silently rewrite broad capability guidance. Durable cross-project updates require accumulated drift validated at idle time, with traceability and fact/judgment separation. Users may leave behavior adaptive, adjust manually, or lock to preference; system defaults support project-level overrides. Budget is a ceiling, not a spending target. Weights, formulas, thresholds, and mechanics remain open.
+
+Full ratified decisions and alternatives considered: `_research\findings\A7-ROUTER-GOVERNANCE-DECISION-BRIEF.md` and `_system\DECISIONS.md`.
 
 Full decisions: `_system\DECISIONS.md`
 
@@ -72,7 +74,7 @@ See `_system\PROJECT-SOURCE-MANIFEST.md` for the full list and purpose of each f
 - `(app visuals) SubOrch#1 [OCC]` — **creative exploration lane only.** Not a build-spec or implementation chat. Raw handoff at `_design\OCC-UI-Visual-Direction-Handoff.txt`; summary at `_system\APP-VISUAL-DIRECTION.md`.
 - `Main ResearchOrch [OCC]` — **high-level frontier and research direction only.** Does not operate the working research queue; does not write worker research prompts. Preserve chat history.
 - `[Complete] Founder Research Briefings [OCC]` — completed the Wave 1 R7/R8/R9/R15 founder-briefing cycle and returned approved founder-level product and policy direction. Outcome handoff: `_handoffs\FOUNDER-BRIEFINGS-WAVE-1-OUTCOME-HANDOFF.md`.
-- `[In Progress] (operational research) TaskRunner#3 [OCC]` — completed B1. Remains open as the operational research/benchmark lane, waiting for the next contained assignment. Proposed next task: `A7 — Router Governance Decision Brief [OCC]`.
+- `[In Progress] (operational research) TaskRunner#3 [OCC]` — completed B1 and A7. Remains open as the operational research/benchmark lane, waiting for its next contained assignment. Next task requires MainOrch to define B2 scope before assignment.
 - `[Complete] (Base UX command thread) SubOrch#5 [OCC]` — Command Thread is complete, mounted, and validated. Jonathan performed the final keyboard acceptance check (Enter sends; Shift+Enter inserts a newline). Formally closed. Must not receive unrelated work.
 - Fresh `MainOrch [OCC]` — next overall project-control chat (the recipient of this document).
 
@@ -103,6 +105,8 @@ Commits:
 R6 is deferred; Gemini reached its daily Deep Research limit before R6 could start. R6 must not displace build-critical research when capacity returns. R10–R14 and R16–R21 remain conditional and must not be treated as launched or approved.
 
 **B1 — Router Scenario Corpus [OCC]** is complete and durable. Artifact: `_research\benchmarks\B1-ROUTER-SCENARIO-CORPUS.md`. Handoff: `_handoffs\B1-ROUTER-SCENARIO-CORPUS-HANDOFF.md`. Completion commit: `d3c4450`, pushed to `origin/main`. B1 establishes behavior-level scenarios only and does not ratify router architecture, scoring, storage, recovery mechanics, connector implementation, privacy packaging, credentials, B2, D1, or router code.
+
+**A7 — Router Governance Decision Brief [OCC]** is complete and ratified. Artifact: `_research\findings\A7-ROUTER-GOVERNANCE-DECISION-BRIEF.md`. Split-gate and semantic-feedback governance decisions are ratified. B2 is required next to turn the ratified behavior claims into bounded measurable tests before D1, but B2 has no approved scope yet. D1 and router-core remain blocked. No candidate research item has been launched or authorized.
 
 Founder Research Briefings Wave 1 also produced a non-binding future research candidate portfolio:
 
@@ -149,9 +153,8 @@ Full workflow: `_system\WORKFLOW-ROLES.md`
 1. Manually re-upload the updated `_system` folder to the ChatGPT OCC project sources.
 2. SubOrch#5 is complete and closed.
 3. B1 is complete and durable.
-4. In a fresh MainOrch chat, assign TaskRunner#3 the contained `A7 — Router Governance Decision Brief [OCC]` task. A7 translates R7/A3, R8/A4, R9/A5, founder direction, and B1 scenarios into founder-readable alternatives, defaults, risks, and consequences for split-gate interpretation and semantic-feedback governance. A7 is internal decision support only: no external research launch, no code, no architecture ratification.
-5. Use A7 to settle split-gate and semantic-feedback governance. Both must be resolved before B2 and D1 can proceed.
-6. Define whether B2 is needed only after those decisions. B2 has no approved scope yet.
-7. D1 remains blocked until unresolved decisions and any required benchmark/acceptance work are complete.
-8. Router-core code remains unauthorized.
-9. Do not automatically launch any candidate research.
+4. A7 is complete and ratified. Split-gate and semantic-feedback governance are resolved.
+5. B2 is required next to turn the ratified behavior claims into bounded measurable tests before D1. B2 has no approved scope yet; define B2 scope before assigning any work.
+6. D1 remains blocked until B2 is complete and MainOrch has approved a Router Build Package.
+7. Router-core code remains unauthorized.
+8. Do not launch any candidate research item without a dedicated approved research lane.

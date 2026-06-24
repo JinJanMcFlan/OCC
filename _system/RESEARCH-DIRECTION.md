@@ -119,6 +119,14 @@ None is current router implementation scope. None delays B1, B2, D1, or router i
 
    This candidate does not delay A7, B2 definition, D1, or router implementation. It requires a dedicated research packet before launch and is not a current implementation commitment or a finalized privacy-tier product design.
 
+**A7 founder-direction capture (high-priority, non-binding future product/governance direction — not active research, approved implementation, autonomous external research, self-updating intelligence, credential handling, connector scope, or shared learning):**
+
+8. Richer continuation and escalation mechanics, including future in-app notice, message, or call channels where permissions allow.
+9. User-customizable assistant profiles and working-style/system-prompt preferences.
+10. Future progress-aware validation and low-priority/idle-time validation mechanics.
+
+Each of items 8–10 requires a dedicated research packet and MainOrch approval before any implementation or research lane is opened.
+
 Credential security and credential storage require separate expert-grade research, implementation planning, and review before any build commitment.
 
 Company/internal delivery is a future direction for work, outputs, and delegated tasks to colleagues or approved internal applications, with identity, permissions, audit, and revocation.

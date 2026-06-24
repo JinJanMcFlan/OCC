@@ -1,6 +1,6 @@
 # OCC — Current State
 
-**Last updated:** 2026-06-23 (B1 completion reconciliation)
+**Last updated:** 2026-06-24 (A7 router governance ratification)
 **Read order:** `OCC-ALIGNMENT.md` (identity) → this file (where we are) → `DECISIONS.md` (active calls).
 
 ---
@@ -37,7 +37,9 @@ Detailed handoff: `_handoffs\WAVE-1-RESEARCH-STATUS-HANDOFF.md`
 
 **Founder Research Briefings Wave 1** is complete for R7, R8, R9, and R15. The briefing cycle produced approved founder-level product and policy direction covering customer-outcome advocacy, Protected / Smart Default privacy, state-changing recovery, local-first deep memory, truthful provenance, canonical project context, scoped connector access, cost-aware legitimate access, and standardized connector direction. Outcome handoff: `_handoffs\FOUNDER-BRIEFINGS-WAVE-1-OUTCOME-HANDOFF.md`.
 
-**B1 — Router Scenario Corpus [OCC]** is complete and durable. Artifact: `_research\benchmarks\B1-ROUTER-SCENARIO-CORPUS.md`. Handoff: `_handoffs\B1-ROUTER-SCENARIO-CORPUS-HANDOFF.md`. Completion commit: `d3c4450`, pushed to `origin/main`. B1 establishes behavior-level scenarios only. It does not ratify router architecture, scoring, storage, recovery mechanics, connector implementation, privacy packaging, credentials, B2, D1, or router code. TaskRunner#3 completed B1 and remains open as the operational research/benchmark lane, waiting for its next contained assignment.
+**B1 — Router Scenario Corpus [OCC]** is complete and durable. Artifact: `_research\benchmarks\B1-ROUTER-SCENARIO-CORPUS.md`. Handoff: `_handoffs\B1-ROUTER-SCENARIO-CORPUS-HANDOFF.md`. Completion commit: `d3c4450`, pushed to `origin/main`. B1 establishes behavior-level scenarios only. It does not ratify router architecture, scoring, storage, recovery mechanics, connector implementation, privacy packaging, credentials, B2, D1, or router code.
+
+**A7 — Router Governance Decision Brief [OCC]** is complete and ratified. Artifact: `_research\findings\A7-ROUTER-GOVERNANCE-DECISION-BRIEF.md`. Split-gate governance and semantic-feedback governance decisions are both ratified by MainOrch and Jonathan. B2 is required next to turn the ratified behavior claims into bounded measurable tests before D1, but B2 has no approved scope yet. D1 and router-core remain blocked pending B2 and later MainOrch approval. No candidate research item has been launched or authorized.
 
 **Base UX desktop shell** is built and validated. An isolated, locally runnable desktop shell exists at `apps\occ-desktop\` using Electron Forge, Vite, React, and TypeScript. It implements the four-panel Base UX layout (left: projects and conversation tree; center: command thread and composer; right: local controls and status placeholders; bottom: queue with five visual states). This shell is intentionally isolated from router, data, and provider architecture — all of which remain unimplemented and locked pending research. Accepted initial app-shell checkpoint: commit `28384c2`. Boundary document: `_architecture\BASE-UX-SHELL-BOUNDARY.md`.
 
@@ -99,23 +101,21 @@ Core router implementation remains blocked pending a MainOrch-approved Router Bu
 
 1. Manually re-upload the updated `_system` folder to the ChatGPT OCC project sources.
 2. SubOrch#5 is complete and closed. No further work is assigned to it.
-3. B1 is complete and durable. TaskRunner#3 remains open and is waiting for its next contained assignment.
-4. In a fresh MainOrch chat, assign TaskRunner#3 the contained `A7 — Router Governance Decision Brief [OCC]` task. A7 should translate existing R7/A3, R8/A4, R9/A5, founder direction, and B1 scenarios into founder-readable alternatives, defaults, risks, and consequences for split-gate interpretation and semantic-feedback governance. A7 is internal decision support only: no external research launch, no code, no architecture ratification.
-5. Use A7 to settle split-gate and semantic-feedback governance decisions. Both must be resolved before B2 and D1 can proceed.
-6. Define whether B2 is needed only after those decisions. B2 has no approved scope yet.
-7. D1 remains blocked until unresolved decisions and any required benchmark and acceptance work are complete.
-8. Router-core code remains unauthorized.
-9. The seven founder-derived research candidates remain non-binding and require dedicated research packets and approval before launch.
+3. B1 is complete and durable.
+4. A7 is complete and ratified. Split-gate and semantic-feedback governance are resolved.
+5. B2 is required next to turn the ratified behavior claims into bounded measurable tests before D1. B2 has no approved scope yet; define B2 scope before assigning any work.
+6. D1 remains blocked until B2 is complete and MainOrch has approved a Router Build Package.
+7. Router-core code remains unauthorized.
+8. Do not launch any candidate research item without a dedicated approved research lane.
 
 ---
 
 ## What is not yet built
 
 - Router-core architecture is unimplemented and locked pending a MainOrch-approved `D1 — Router Build Package [OCC]`.
-- `A7 — Router Governance Decision Brief [OCC]` is proposed as TaskRunner#3's next contained assignment but is not yet started.
+- `A7 — Router Governance Decision Brief [OCC]` is complete. Split-gate and semantic-feedback governance are ratified.
 - Final router logic, shared record model, scoring formula, storage changes, automatic rerouting, and automatic semantic confidence updates are not approved.
-- Split-gate interpretation and semantic-feedback governance are unresolved MainOrch decisions; both must be resolved before B2 and D1.
-- B2 has no approved scope; it will be defined only after split-gate and semantic-feedback governance decisions are resolved.
+- B2 is required before D1 but has no approved scope yet.
 - The seven founder-derived research candidates are not active research runs, not router implementation scope, and do not delay A7, B2, D1, or router implementation by default.
 - No OCC v1 scope has been defined.
 - Model and provider registry is stale; refresh at build time.

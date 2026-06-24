@@ -26,6 +26,8 @@ The deciding logic weighs five inputs, each a user-adjustable weight on top of a
 
 Non-urgent work can be deferred to off-peak windows or batch-API runs when that improves cost efficiency without violating user urgency or autonomy settings.
 
+Speed, cost, quality, autonomy, and budget jointly shape routing decisions. System defaults support project-level overrides.
+
 ### Customer-outcome advocacy and cost integrity
 
 OCC optimizes for the customer's actual outcome: privacy, cost, quality, control, and reliable completion, not OCC revenue or hidden margin.
@@ -47,6 +49,8 @@ Optional customer API keys and local AI are supported direction. Customer-owned 
 Routing must serve customer budget, quality, outcome, and stated preference rather than hidden margin.
 
 Budget controls are launch-critical: visible spend, forecasts and explanations, limits at user/project/task/workspace levels, approval gates, alerts, hard stops, and kill-switch behavior.
+
+A budget is a ceiling, not a spending target. A higher budget may permit faster or higher-quality choices when the user asks for them, but budget size alone must not cause unnecessary spending.
 
 OCC must not promise unlimited managed frontier-model usage.
 
@@ -166,9 +170,30 @@ Current known baseline gaps include password-management and broader operational-
 
 Security direction must not be turned into current marketing language, a completed assurance claim, or a certification claim without later evidence and approval.
 
----
+### Adaptive split-gate governance
 
-## Pending MainOrch decisions — not architecture yet
+OCC may execute only a verified route that currently meets the task's binding requirements, customer-outcome needs, applicable privacy rules, budget ceilings, and existing approval scope.
 
-- **Split-gate interpretation:** binding execution constraints may block a route, while uncertain or potentially better alternatives must remain visible as exploration candidates rather than silently disappearing. Not ratified.
-- **Semantic-feedback governance:** direct operational facts may update automatically; semantic capability judgments remain task-specific, traceable, gradual, and review-supported. Not ratified.
+Materially relevant alternatives that are cheaper, local, customer-owned, subscription-backed, explicitly user-preferred, or potentially better must remain visible when they are blocked, uncertain, stale, unavailable, unconnected, or otherwise not executable. OCC must show the reason. It must not hide such routes or present them as ready.
+
+When a currently unavailable route has an equal-or-better verified substitute for the actual task against the binding requirements and user-selected priorities, and that substitute remains within the task's existing approval, privacy, and budget boundaries, OCC should show a visible "about to continue" decision in the Command Thread with a 10-second override countdown. The user can stop, hold, or choose a different route. If the user does not intervene, OCC may proceed with the verified substitute rather than silently waiting forever.
+
+An explicitly user-selected or user-controlled route is treated as likely preferred by default. This includes a high-value local model, a customer-owned route, or an unconfirmed subscription connection. OCC must give the user a meaningful opportunity to restore or confirm that route before abandoning it, then follow the user-configured, context-sensitive continuation policy rather than stalling indefinitely.
+
+A substitution may not override an explicit route lock, a required new approval, protected-context rules, state-changing safeguards, or a hard budget limit.
+
+Exact timer lengths beyond the 10-second safe-substitution default, notification channels, messaging or call behavior, and implementation mechanics remain open.
+
+### Adaptive task-fit and semantic-feedback governance
+
+OCC begins from evidence-backed model and task-fit guidance, but may make small, reversible, task- or project-local routing adjustments during active work based on observed progress, error burden, troubleshooting burden, rescue by other routes, time, predicted and observed cost, quality needs, and the user's settings.
+
+These active-work adjustments must remain traceable and must stay within binding requirements, user route locks, privacy rules, approval scope, and budget ceilings. They are not durable global claims that a model is broadly good or bad.
+
+A single difficult task, subjective complaint, disputed reviewer judgment, isolated API success or failure, or unverified rescue outcome must not silently rewrite broad capability guidance. Direct operational facts and semantic-quality judgments remain distinct.
+
+Durable cross-project capability guidance may change only after meaningful accumulated drift is validated during user-designated low-priority or idle time. That validation must preserve traceability, distinguish operational facts from semantic judgments, consider whether the project rather than the model caused the difficulty, and remain inside existing privacy boundaries.
+
+Users must eventually be able to leave task-fit behavior adaptive, adjust it manually, or lock it to their chosen preference. System defaults must support project-level overrides.
+
+Exact weights, scoring formulas, validation thresholds, research cadence, UI design, and technical mechanisms remain open.

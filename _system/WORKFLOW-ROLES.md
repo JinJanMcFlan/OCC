@@ -22,6 +22,10 @@ Creating a named orchestration chat authorizes it to begin and continue its assi
 
 The chat remains responsible for the original task through planning, execution coordination, review, iteration, and recommended next steps as the scope requires. Completing one phase — such as orientation, planning, organization, a specification, or an execution prompt — does not complete the original task. It returns a MainOrch handoff early only for a genuine cross-lane decision, material blocker, scope conflict, or meaningful discovery requiring higher-level review. Work already authorized by creating the chat does not require routine re-approval.
 
+## Approval scope
+
+One explicit human approval for a clearly bounded task authorizes the stated execution scope, routine result checking, and a focused commit/push when those are included in the approved task. A returned result is a report, not a second approval gate. New approval is required only when the scope must expand, unexpected or unknown changes appear, a material contradiction or risk is discovered, or a newly required destructive or irreversible action was not already approved.
+
 ---
 
 ## Roles
@@ -185,6 +189,19 @@ At real closeout, the chat provides what was completed and the supporting result
 6. TaskRunner writes a self-contained prompt, sends it to an execution agent, and continues through the original task until it is complete, materially blocked, or explicitly transferred or re-scoped by MainOrch. It then provides the required closeout.
 7. Execution agent executes and returns the result.
 8. Results flow back up when a real decision, blocker, or completed handoff is ready. The orchestrator checks returned work against project direction. Approval is the signal for the human to authorize any repository or deployment actions.
+
+---
+
+## Founder-decision facilitation
+
+When presenting a governance or product decision for founder review, use this pattern:
+
+- Use concrete "how should OCC act here?" examples.
+- Show meaningful contrasting behavior — not just option labels.
+- Offer a tentative recommendation with the key tradeoff made visible.
+- Leave explicit room for founder redesign rather than forcing approval of a finished prescription.
+
+This pattern applies when a SubOrch or TaskRunner reaches a genuine decision point requiring founder input, not for routine execution results.
 
 ---
 
