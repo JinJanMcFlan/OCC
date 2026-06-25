@@ -197,3 +197,17 @@ Durable cross-project capability guidance may change only after meaningful accum
 Users must eventually be able to leave task-fit behavior adaptive, adjust it manually, or lock it to their chosen preference. System defaults must support project-level overrides.
 
 Exact weights, scoring formulas, validation thresholds, research cadence, UI design, and technical mechanisms remain open.
+
+### Build the Functional Core before comprehensive validation
+
+The build-first / validate-later policy is active. Building a real internal OCC Functional Core takes priority over comprehensive pre-build validation. The former B2 pre-build benchmark gate is superseded; it becomes `B2 — Post-Build Router Validation Inventory` and is deferred until OCC is internally usable.
+
+During the Functional Core build, only the limited safety spine is required: build/type/lint remain green; no uncontrolled external spend; no protected-context exposure; no blind retry of state-changing work; no silent override of an explicit route lock or hard budget boundary. Current safety boundaries are not waived by this policy.
+
+The build sequence, three-test threshold for new work, and deferral rules are maintained in `_system\OCC-FUNCTIONAL-CORE-FAST-TRACK-ROADMAP.md`.
+
+### OCC must reduce coordination burden
+
+Orchestrators and agents must converge on the simplest executable path. Planning loops, duplicate approvals, speculative test bureaucracy, and unnecessary AI-to-AI coordination are product and workflow failure modes.
+
+New work must either: (1) advance the Functional Core critical path; (2) prevent an immediate hard failure; or (3) enter the Deferred Work Inventory at `_system\OCC-DEFERRED-WORK-INVENTORY.md`.

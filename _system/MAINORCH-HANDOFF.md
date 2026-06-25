@@ -154,7 +154,7 @@ Full workflow: `_system\WORKFLOW-ROLES.md`
 2. SubOrch#5 is complete and closed.
 3. B1 is complete and durable.
 4. A7 is complete and ratified. Split-gate and semantic-feedback governance are resolved.
-5. B2 is required next to turn the ratified behavior claims into bounded measurable tests before D1. B2 has no approved scope yet; define B2 scope before assigning any work.
-6. D1 remains blocked until B2 is complete and MainOrch has approved a Router Build Package.
-7. Router-core code remains unauthorized.
-8. Do not launch any candidate research item without a dedicated approved research lane.
+5. Pre-build router benchmark planning is superseded. `B2 — Post-Build Router Validation Inventory` is deferred until OCC is internally usable.
+6. `D1 — OCC Functional Core Build Plan` may now be prepared. Router-core implementation is no longer blocked by B2, but remains subject to the limited safety spine and the forthcoming Functional Core Build Plan. Sequencing direction: `_system\OCC-FUNCTIONAL-CORE-FAST-TRACK-ROADMAP.md`.
+7. App Visuals remains a separate creative lane and is unaffected by the fast-track.
+8. No candidate research item was automatically launched.

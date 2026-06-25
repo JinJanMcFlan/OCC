@@ -1,6 +1,6 @@
 # OCC — Current State
 
-**Last updated:** 2026-06-24 (A7 router governance ratification)
+**Last updated:** 2026-06-24 (Functional Core fast-track; B2 deferred)
 **Read order:** `OCC-ALIGNMENT.md` (identity) → this file (where we are) → `DECISIONS.md` (active calls).
 
 ---
@@ -89,26 +89,24 @@ The distinction stays explicit: this is approved direction, not finalized pricin
 
 ## What can continue now
 
-Core router implementation remains blocked pending a MainOrch-approved Router Build Package (`D1 — Router Build Package [OCC]`). Work that may proceed:
+`D1 — OCC Functional Core Build Plan` may now be prepared. Router-core implementation is no longer blocked by B2. All work remains subject to the limited safety spine defined in `_system\OCC-FUNCTIONAL-CORE-FAST-TRACK-ROADMAP.md` and the forthcoming Functional Core Build Plan.
 
+- Functional Core Build Plan (D1) preparation
 - Static and mock Base UX work within the approved app-shell boundary
-- Routing test-case preparation
-- Folder-binding and connector planning
-- Benchmark preparation
-- Reversible scaffolding that does not lock core router architecture
+- App Visuals creative lane (separate, does not consume Functional Core resources)
 
 ---
 
 ## Current work order
 
 1. Manually re-upload the updated `_system` folder to the ChatGPT OCC project sources.
-2. SubOrch#5 is complete and closed. No further work is assigned to it.
+2. SubOrch#5 is complete and closed.
 3. B1 is complete and durable.
 4. A7 is complete and ratified. Split-gate and semantic-feedback governance are resolved.
-5. B2 is required next to turn the ratified behavior claims into bounded measurable tests before D1. B2 has no approved scope yet; define B2 scope before assigning any work.
-6. D1 remains blocked until B2 is complete and MainOrch has approved a Router Build Package.
-7. Router-core code remains unauthorized.
-8. Do not launch any candidate research item without a dedicated approved research lane.
+5. Pre-build router benchmark planning is superseded. `B2 — Post-Build Router Validation Inventory` is deferred until OCC is internally usable.
+6. `D1 — OCC Functional Core Build Plan` may now be prepared. Router-core implementation is no longer blocked by B2, but remains subject to the limited safety spine and the forthcoming Functional Core Build Plan.
+7. App Visuals remains a separate creative lane and is unaffected by the fast-track.
+8. No candidate research item was automatically launched.
 
 ---
 
@@ -117,7 +115,7 @@ Core router implementation remains blocked pending a MainOrch-approved Router Bu
 - Router-core architecture is unimplemented and locked pending a MainOrch-approved `D1 — Router Build Package [OCC]`.
 - `A7 — Router Governance Decision Brief [OCC]` is complete. Split-gate and semantic-feedback governance are ratified.
 - Final router logic, shared record model, scoring formula, storage changes, automatic rerouting, and automatic semantic confidence updates are not approved.
-- B2 is required before D1 but has no approved scope yet.
+- B2 is deferred as the post-build validation inventory; it does not gate D1 or router-core implementation.
 - The seven founder-derived research candidates are not active research runs, not router implementation scope, and do not delay A7, B2, D1, or router implementation by default.
 - No OCC v1 scope has been defined.
 - Model and provider registry is stale; refresh at build time.

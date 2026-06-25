@@ -19,6 +19,8 @@ This manifest lists every active `_system` file and its purpose.
 | `PROJECT-SOURCE-MANIFEST.md` | This file. Lists all active project-source documents and their purposes. |
 | `MAINORCH-HANDOFF.md` | Handoff document for the next MainOrch chat. Includes live decisions, folder structure, and next work order. |
 | `RESEARCH-OPERATIONS.md` | Defines OCC's research artifact system (R/A/B/D labels), packet requirements, provider-fit research routing, queue lifecycle, and validation flow. |
+| `OCC-FUNCTIONAL-CORE-FAST-TRACK-ROADMAP.md` | Active build-sequencing source for the real internal OCC Functional Core and its minimal safety spine. |
+| `OCC-DEFERRED-WORK-INVENTORY.md` | Preserved parking lot for deferred validation, risks, ideas, research candidates, polish, and future improvements. |
 
 ---
 
